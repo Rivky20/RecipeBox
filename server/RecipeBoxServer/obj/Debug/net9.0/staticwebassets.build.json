@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "yK9FTbHcNhviWJUAVKhcmeSXyVyPwcvc7JXWJ3Bbid4=",
+  "Source": "RecipeBoxServer",
+  "BasePath": "_content/RecipeBoxServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
