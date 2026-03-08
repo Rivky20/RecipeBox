@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Data",
+    "\\DTOs",
+    "\\DTOs\\Favorites",
+    "\\DTOs\\Recipes",
+    "\\Migrations",
+    "\\Models",
+    "\\Services"
   ],
   "PreviewInSolutionExplorer": false
 }

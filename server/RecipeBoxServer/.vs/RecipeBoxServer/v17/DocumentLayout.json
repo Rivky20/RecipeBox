@@ -3,6 +3,166 @@
   "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipetype.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Recipetype.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\UserFavorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\UserFavorite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Favorites\\AddFavoritedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Favorites\\AddFavoritedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\FavoritesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\FavoritesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\RecipesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\RecipesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AlbumsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AlbumsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\AlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Albums\\AlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\IUserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IFavoriteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\IFavoriteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAuthservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\IAuthservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAlbumService.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\IAlbumService.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Favoriteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Favoriteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Authservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\Authservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\AlbumService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\AlbumService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\User.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\User.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\UpdateRecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Recipes\\UpdateRecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeQueryDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Recipes\\RecipeQueryDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Recipes\\RecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\CreateRecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Recipes\\CreateRecipeDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\UpdateAlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Albums\\UpdateAlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\CreateAlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Albums\\CreateAlbumDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\UserStatDto.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Admin\\UserStatDto.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\SystemStatsDto.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Admin\\SystemStatsDto.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Data\\RecipeBoxDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\RecipeBoxDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\RecipeService.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\RecipeService.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IRecipeService.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Services\\IRecipeService.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\UserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Users\\UserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\AuthResponseDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Users\\AuthResponseDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\LoginUserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Users\\LoginUserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\RegisterUserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DTOs\\Users\\RegisterUserDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\RecipeBoxServer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RecipeBoxServer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Userstat.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Userstat.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\.vs\\CMakeWorkspaceSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\CMakeWorkspaceSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -14,20 +174,503 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\IUserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IUserService.cs",
+              "RelativeToolTip": "Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:12:38.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AlbumDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\AlbumDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Albums\\AlbumDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\AlbumDto.cs",
+              "RelativeToolTip": "DTOs\\Albums\\AlbumDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:07:44.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AlbumsController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AlbumsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AlbumsController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AlbumsController.cs",
+              "RelativeToolTip": "Controllers\\AlbumsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:09:02.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecipesController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\RecipesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RecipesController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\RecipesController.cs",
+              "RelativeToolTip": "Controllers\\RecipesController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAGMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:09:23.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FavoritesController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\FavoritesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FavoritesController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\FavoritesController.cs",
+              "RelativeToolTip": "Controllers\\FavoritesController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAowDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:15:29.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAowDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T10:52:21.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddFavoritedto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Favorites\\AddFavoritedto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Favorites\\AddFavoritedto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Favorites\\AddFavoritedto.cs",
+              "RelativeToolTip": "DTOs\\Favorites\\AddFavoritedto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:13:24.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserFavorite.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\UserFavorite.cs",
+              "RelativeDocumentMoniker": "Models\\UserFavorite.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\UserFavorite.cs",
+              "RelativeToolTip": "Models\\UserFavorite.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-08T19:26:56.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Recipetype.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipetype.cs",
+              "RelativeDocumentMoniker": "Models\\Recipetype.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipetype.cs",
+              "RelativeToolTip": "Models\\Recipetype.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T17:40:21.322Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
+              "RelativeDocumentMoniker": "Models\\Recipe.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
+              "RelativeToolTip": "Models\\Recipe.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:05:15.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IFavoriteservice.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IFavoriteservice.cs",
+              "RelativeDocumentMoniker": "Services\\IFavoriteservice.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IFavoriteservice.cs",
+              "RelativeToolTip": "Services\\IFavoriteservice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:37:58.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IAuthservice.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAuthservice.cs",
+              "RelativeDocumentMoniker": "Services\\IAuthservice.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAuthservice.cs",
+              "RelativeToolTip": "Services\\IAuthservice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T00:17:17.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAlbumService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAlbumService.cs",
+              "RelativeDocumentMoniker": "Services\\IAlbumService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IAlbumService.cs",
+              "RelativeToolTip": "Services\\IAlbumService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:06:20.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Favoriteservice.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Favoriteservice.cs",
+              "RelativeDocumentMoniker": "Services\\Favoriteservice.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Favoriteservice.cs",
+              "RelativeToolTip": "Services\\Favoriteservice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:37:24.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Authservice.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Authservice.cs",
+              "RelativeDocumentMoniker": "Services\\Authservice.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\Authservice.cs",
+              "RelativeToolTip": "Services\\Authservice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T00:15:48.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AlbumService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\AlbumService.cs",
+              "RelativeDocumentMoniker": "Services\\AlbumService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\AlbumService.cs",
+              "RelativeToolTip": "Services\\AlbumService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:07:11.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:04:34.483Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Album.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Album.cs",
+              "RelativeDocumentMoniker": "Models\\Album.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Album.cs",
+              "RelativeToolTip": "Models\\Album.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:05:01.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UpdateRecipeDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\UpdateRecipeDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Recipes\\UpdateRecipeDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\UpdateRecipeDto.cs",
+              "RelativeToolTip": "DTOs\\Recipes\\UpdateRecipeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:08:47.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "RecipeQueryDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeQueryDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Recipes\\RecipeQueryDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeQueryDto.cs",
+              "RelativeToolTip": "DTOs\\Recipes\\RecipeQueryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T18:08:32.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RecipeDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Recipes\\RecipeDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\RecipeDto.cs",
+              "RelativeToolTip": "DTOs\\Recipes\\RecipeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:08:22.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreateRecipeDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\CreateRecipeDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Recipes\\CreateRecipeDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Recipes\\CreateRecipeDto.cs",
+              "RelativeToolTip": "DTOs\\Recipes\\CreateRecipeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:08:35.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UpdateAlbumDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\UpdateAlbumDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Albums\\UpdateAlbumDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\UpdateAlbumDto.cs",
+              "RelativeToolTip": "DTOs\\Albums\\UpdateAlbumDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T14:50:50.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CreateAlbumDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\CreateAlbumDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Albums\\CreateAlbumDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Albums\\CreateAlbumDto.cs",
+              "RelativeToolTip": "DTOs\\Albums\\CreateAlbumDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:07:59.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserStatDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\UserStatDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Admin\\UserStatDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\UserStatDto.cs",
+              "RelativeToolTip": "DTOs\\Admin\\UserStatDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T00:27:27.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SystemStatsDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\SystemStatsDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Admin\\SystemStatsDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Admin\\SystemStatsDto.cs",
+              "RelativeToolTip": "DTOs\\Admin\\SystemStatsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T00:27:55.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RecipeBoxDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Data\\RecipeBoxDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\RecipeBoxDbContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Data\\RecipeBoxDbContext.cs",
+              "RelativeToolTip": "Data\\RecipeBoxDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T21:04:03.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T14:14:45.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RecipeService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\RecipeService.cs",
+              "RelativeDocumentMoniker": "Services\\RecipeService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\RecipeService.cs",
+              "RelativeToolTip": "Services\\RecipeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:08:27.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T11:12:56.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IRecipeService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IRecipeService.cs",
+              "RelativeDocumentMoniker": "Services\\IRecipeService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Services\\IRecipeService.cs",
+              "RelativeToolTip": "Services\\IRecipeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T23:07:44.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAwwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-13T21:05:33.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\UserDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Users\\UserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\UserDto.cs",
+              "RelativeToolTip": "DTOs\\Users\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:06:37.457Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AuthResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\AuthResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Users\\AuthResponseDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\AuthResponseDto.cs",
+              "RelativeToolTip": "DTOs\\Users\\AuthResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T10:44:46.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "LoginUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\LoginUserDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Users\\LoginUserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\LoginUserDto.cs",
+              "RelativeToolTip": "DTOs\\Users\\LoginUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T10:43:09.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\Users\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\DTOs\\Users\\RegisterUserDto.cs",
+              "RelativeToolTip": "DTOs\\Users\\RegisterUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:07:10.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-02T11:19:10.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "RecipeBoxServer.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\RecipeBoxServer.csproj",
+              "RelativeDocumentMoniker": "RecipeBoxServer.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\RecipeBoxServer.csproj",
+              "RelativeToolTip": "RecipeBoxServer.csproj",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-13T21:18:59.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Userstat.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Userstat.cs",
+              "RelativeDocumentMoniker": "Models\\Userstat.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Userstat.cs",
+              "RelativeToolTip": "Models\\Userstat.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-05T00:07:03.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAABYAAAAAAAAAAAAxwBcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-05T17:02:20.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
               "Title": "CMakeWorkspaceSettings.json",
               "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\.vs\\CMakeWorkspaceSettings.json",
               "RelativeDocumentMoniker": ".vs\\CMakeWorkspaceSettings.json",
               "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\.vs\\CMakeWorkspaceSettings.json",
               "RelativeToolTip": ".vs\\CMakeWorkspaceSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-13T16:35:30.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-13T16:35:30.062Z"
             }
           ]
         }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20a172c566a5e46fdbef1c4294e6aeb994100325")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
