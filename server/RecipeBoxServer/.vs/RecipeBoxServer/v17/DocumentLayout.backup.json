@@ -174,8 +174,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 9,
@@ -292,7 +296,7 @@
               "RelativeDocumentMoniker": "Models\\Recipe.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
               "RelativeToolTip": "Models\\Recipe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswBMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-14T17:05:15.845Z",
               "EditorCaption": ""
@@ -548,10 +552,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T23:07:44.318Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",

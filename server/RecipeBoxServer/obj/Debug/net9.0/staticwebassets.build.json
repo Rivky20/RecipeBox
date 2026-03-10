@@ -1,12 +1,125 @@
 {
   "Version": 1,
-  "Hash": "yK9FTbHcNhviWJUAVKhcmeSXyVyPwcvc7JXWJ3Bbid4=",
+  "Hash": "jtowHvCjMIymATSBo0B+i7TJGacaqhZDhHg/h0SDTu4=",
   "Source": "RecipeBoxServer",
   "BasePath": "_content/RecipeBoxServer",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "RecipeBoxServer\\wwwroot",
+      "Source": "RecipeBoxServer",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\",
+      "BasePath": "_content/RecipeBoxServer",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\.gitkeep",
+      "SourceId": "RecipeBoxServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\",
+      "BasePath": "_content/RecipeBoxServer",
+      "RelativePath": "images/#[.{fingerprint}]?.gitkeep",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lv5tvmajl9",
+      "Integrity": "AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\.gitkeep"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/.gitkeep",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:13:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs="
+        }
+      ]
+    },
+    {
+      "Route": "images/.lv5tvmajl9.gitkeep",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:13:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lv5tvmajl9"
+        },
+        {
+          "Name": "label",
+          "Value": "images/.gitkeep"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs="
+        }
+      ]
+    }
+  ]
 }

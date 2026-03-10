@@ -1,0 +1,16 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/RecipeBoxServer/images/.gitkeep">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\.gitkeep'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AbpHGcgLb\u002BkRsJGnwFEktk7uzpZOCcBY74\u002BYBdrKVGs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022AbpHGcgLb\u002BkRsJGnwFEktk7uzpZOCcBY74\u002BYBdrKVGs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Mar 2026 14:13:25 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/RecipeBoxServer/images/.lv5tvmajl9.gitkeep">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\.gitkeep'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lv5tvmajl9"},{"Name":"integrity","Value":"sha256-AbpHGcgLb\u002BkRsJGnwFEktk7uzpZOCcBY74\u002BYBdrKVGs="},{"Name":"label","Value":"_content/RecipeBoxServer/images/.gitkeep"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022AbpHGcgLb\u002BkRsJGnwFEktk7uzpZOCcBY74\u002BYBdrKVGs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 10 Mar 2026 14:13:25 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

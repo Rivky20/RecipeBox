@@ -72,7 +72,7 @@ public class RecipeService : IRecipeService
         var recipe = new Recipe
         {
             Name = dto.Name,
-            Description = dto.Description,
+            Description = dto.Description ?? string.Empty,
             ImagePath = dto.ImagePath,
             RecipeType = dto.RecipeType,
             Link = dto.RecipeType == RecipeType.Link ? dto.Link : null,
@@ -111,7 +111,7 @@ public class RecipeService : IRecipeService
             throw new InvalidOperationException("Album not found.");
 
         recipe.Name = dto.Name;
-        recipe.Description = dto.Description;
+        recipe.Description = dto.Description ?? string.Empty;
         recipe.ImagePath = dto.ImagePath;
         recipe.RecipeType = dto.RecipeType;
         recipe.Link = dto.RecipeType == RecipeType.Link ? dto.Link : null;

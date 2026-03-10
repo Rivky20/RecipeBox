@@ -1,5 +1,88 @@
 {
   "Version": 1,
   "ManifestType": "Build",
-  "Endpoints": []
+  "Endpoints": [
+    {
+      "Route": "images/.gitkeep",
+      "AssetFile": "images/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:13:25 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs="
+        }
+      ]
+    },
+    {
+      "Route": "images/.lv5tvmajl9.gitkeep",
+      "AssetFile": "images/.gitkeep",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/octet-stream"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:13:25 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lv5tvmajl9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs="
+        },
+        {
+          "Name": "label",
+          "Value": "images/.gitkeep"
+        }
+      ]
+    }
+  ]
 }

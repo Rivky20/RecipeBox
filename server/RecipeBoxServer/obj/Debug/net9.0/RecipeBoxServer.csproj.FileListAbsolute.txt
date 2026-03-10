@@ -130,3 +130,4 @@ C:\Users\user1\Desktop\RecipeBoxפרוייקט\RecipeBox\server\RecipeBoxServer\
 C:\Users\user1\Desktop\RecipeBoxפרוייקט\RecipeBox\server\RecipeBoxServer\obj\Debug\net9.0\RecipeBoxServer.genruntimeconfig.cache
 C:\Users\user1\Desktop\RecipeBoxפרוייקט\RecipeBox\server\RecipeBoxServer\obj\Debug\net9.0\ref\RecipeBoxServer.dll
 C:\Users\user1\Desktop\RecipeBoxפרוייקט\RecipeBox\server\RecipeBoxServer\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\user1\Desktop\RecipeBoxפרוייקט\RecipeBox\server\RecipeBoxServer\bin\Debug\net9.0\RecipeBoxServer.staticwebassets.runtime.json

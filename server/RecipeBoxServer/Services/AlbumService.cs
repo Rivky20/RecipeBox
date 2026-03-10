@@ -53,7 +53,7 @@ public class AlbumService : IAlbumService
         var album = new Album
         {
             Name = dto.Name,
-            Description = dto.Description
+            Description = dto.Description ?? string.Empty
         };
 
         _db.Albums.Add(album);
@@ -75,7 +75,7 @@ public class AlbumService : IAlbumService
         if (album == null) return null;
 
         album.Name = dto.Name;
-        album.Description = dto.Description;
+        album.Description = dto.Description ?? string.Empty;
 
         await _db.SaveChangesAsync();
 

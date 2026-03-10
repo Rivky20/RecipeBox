@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\.gitkeep",
+      "PackagePath": "staticwebassets\\images\\.gitkeep"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.RecipeBoxServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.RecipeBoxServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.RecipeBoxServer.props",
+      "PackagePath": "build\\RecipeBoxServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.RecipeBoxServer.props",
+      "PackagePath": "buildMultiTargeting\\RecipeBoxServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.RecipeBoxServer.props",
+      "PackagePath": "buildTransitive\\RecipeBoxServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

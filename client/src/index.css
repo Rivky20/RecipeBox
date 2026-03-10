@@ -1,13 +1,57 @@
-body {
+/* ── Brand tokens ─────────────────────────────────────────────── */
+:root {
+  --pink:        #E8919C;
+  --pink-dark:   #C97080;
+  --pink-light:  #FCE8EA;
+  --beige:       #F5E1D0;
+  --beige-dark:  #E8CCBA;
+  --cream:       #FFFAF7;
+  --card-bg:     #FFF8F4;
+  --border:      #F0DDD0;
+  --text:        #1A1A1A;
+  --text-muted:  #7D6B62;
+  --font-heading: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
+  --font-body:    'Heebo', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── Global reset / base ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  background-color: var(--cream);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--pink-dark);
+}
+
+/* ── Scrollbar styling ────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--beige-dark); border-radius: 99px; }
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
