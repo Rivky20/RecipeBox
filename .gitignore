@@ -1,0 +1,13 @@
+# Secrets - never commit
+server/RecipeBoxServer/appsettings.Development.json
+client/.env.local
+
+# Build outputs
+**/bin/
+**/obj/
+**/node_modules/
+client/dist/
+
+# IDE
+.vs/
+*.user

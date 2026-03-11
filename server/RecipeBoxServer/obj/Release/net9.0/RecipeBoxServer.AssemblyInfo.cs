@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+455f7b9dcc7458954d314231d0b19a31275ddff8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecipeBoxServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
