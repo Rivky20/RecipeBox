@@ -18,6 +18,7 @@ export interface LoginRequest {
 export interface RegisterRequest {
   email: string;
   password: string;
+  userName: string;
 }
 
 export interface AuthResponse {
@@ -25,6 +26,7 @@ export interface AuthResponse {
   userId: string;
   email: string;
   role: UserRole;
+  userName?: string;
 }
 
 // ─── Albums ──────────────────────────────────────────────────────────────────

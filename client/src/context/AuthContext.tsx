@@ -3,24 +3,6 @@ import { AuthUser } from '../types';
 import { authService } from '../services/authService';
 
 const STORAGE_KEY = 'recipebox_user';
-const USERNAMES_KEY = 'recipebox_usernames'; // { email: username }
-
-function getStoredUsername(email: string): string {
-  try {
-    const map = JSON.parse(localStorage.getItem(USERNAMES_KEY) || '{}');
-    return map[email] || email.split('@')[0];
-  } catch {
-    return email.split('@')[0];
-  }
-}
-
-function saveUsername(email: string, username: string) {
-  try {
-    const map = JSON.parse(localStorage.getItem(USERNAMES_KEY) || '{}');
-    map[email] = username;
-    localStorage.setItem(USERNAMES_KEY, JSON.stringify(map));
-  } catch {}
-}
 
 interface AuthContextValue {
   user: AuthUser | null;
@@ -53,13 +35,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string) => {
     const data = await authService.login({ email, password });
-    const username = getStoredUsername(data.email);
+    const username = data.userName || email.split('@')[0];
     setUser({ userId: data.userId, email: data.email, username, role: data.role, token: data.token });
   };
 
   const register = async (email: string, password: string, username: string) => {
-    const data = await authService.register({ email, password });
-    saveUsername(data.email, username);
+    const data = await authService.register({ email, password, userName: username });
     setUser({ userId: data.userId, email: data.email, username, role: data.role, token: data.token });
   };
 

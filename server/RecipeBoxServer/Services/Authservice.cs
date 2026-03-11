@@ -30,6 +30,7 @@ public class AuthService : IAuthService
         {
             Email = dto.Email.ToLower(),
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+            UserName = dto.UserName,
             Role = "User"
         };
 
@@ -41,7 +42,8 @@ public class AuthService : IAuthService
             Token = GenerateToken(user),
             UserId = user.Id,
             Email = user.Email,
-            Role = user.Role
+            Role = user.Role,
+            UserName = user.UserName
         };
     }
 
@@ -60,7 +62,8 @@ public class AuthService : IAuthService
             Token = GenerateToken(user),
             UserId = user.Id,
             Email = user.Email,
-            Role = user.Role
+            Role = user.Role,
+            UserName = user.UserName
         };
     }
 

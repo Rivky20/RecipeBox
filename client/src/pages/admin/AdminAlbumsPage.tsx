@@ -124,35 +124,44 @@ export default function AdminAlbumsPage() {
                 style={{ display: 'none' }}
                 onChange={handleFileChange}
               />
-              <HStack gap={3} align="center">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  colorPalette="teal"
-                  loading={uploading}
-                  onClick={() => fileInputRef.current?.click()}
-                >
-                  {imagePath ? 'החלף תמונה' : 'העלה תמונה'}
-                </Button>
-                {imagePath && (
-                  <Box
-                    as="img"
-                    src={imagePath}
-                    alt="תצוגה מקדימה"
-                    h="48px"
-                    w="72px"
-                    objectFit="cover"
-                    borderRadius="md"
-                    border="1px solid"
-                    borderColor="#EDE0D8"
-                  />
-                )}
-                {imagePath && (
-                  <Button size="xs" variant="ghost" colorPalette="red" onClick={() => { setImagePath(''); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
-                    הסר
+              <Stack gap={2}>
+                <Input
+                  value={imagePath}
+                  onChange={(e) => { setImagePath(e.target.value); if (fileInputRef.current) fileInputRef.current.value = ''; }}
+                  placeholder="הדבק כתובת URL של תמונה..."
+                  dir="ltr"
+                />
+                <HStack gap={3} align="center">
+                  <Text fontSize="xs" color="gray.500">או</Text>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    colorPalette="teal"
+                    loading={uploading}
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    {imagePath ? 'החלף תמונה' : 'העלה תמונה'}
                   </Button>
-                )}
-              </HStack>
+                  {imagePath && (
+                    <Box
+                      as="img"
+                      src={imagePath}
+                      alt="תצוגה מקדימה"
+                      h="48px"
+                      w="72px"
+                      objectFit="cover"
+                      borderRadius="md"
+                      border="1px solid"
+                      borderColor="#EDE0D8"
+                    />
+                  )}
+                  {imagePath && (
+                    <Button size="xs" variant="ghost" colorPalette="red" onClick={() => { setImagePath(''); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
+                      הסר
+                    </Button>
+                  )}
+                </HStack>
+              </Stack>
             </Field.Root>
             <HStack>
               <Button colorPalette="teal" onClick={handleSave} loading={saving}>שמור</Button>
