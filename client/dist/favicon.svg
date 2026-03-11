@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Book spine -->
+  <rect x="4" y="3" width="4" height="26" rx="2" fill="#B91C1C"/>
+  <!-- Book cover -->
+  <rect x="7" y="3" width="18" height="26" rx="2" fill="#EF4444"/>
+  <!-- Pages edge -->
+  <rect x="23" y="4" width="2" height="24" rx="1" fill="#FCA5A5"/>
+  <!-- Text lines -->
+  <rect x="11" y="9"  width="10" height="2" rx="1" fill="white" opacity="0.95"/>
+  <rect x="11" y="13" width="7"  height="2" rx="1" fill="white" opacity="0.95"/>
+  <rect x="11" y="17" width="9"  height="2" rx="1" fill="white" opacity="0.95"/>
+  <rect x="11" y="21" width="6"  height="2" rx="1" fill="white" opacity="0.95"/>
+</svg>
