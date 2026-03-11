@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RecipeBoxServer.Services;
 
 namespace RecipeBoxServer.Controllers;
 
@@ -8,11 +9,11 @@ namespace RecipeBoxServer.Controllers;
 [Authorize]
 public class ImagesController : ControllerBase
 {
-    private readonly IWebHostEnvironment _env;
+    private readonly ICloudinaryService _cloudinary;
 
-    public ImagesController(IWebHostEnvironment env)
+    public ImagesController(ICloudinaryService cloudinary)
     {
-        _env = env;
+        _cloudinary = cloudinary;
     }
 
     [HttpPost("upload")]
@@ -28,20 +29,14 @@ public class ImagesController : ControllerBase
         if (file.Length > 10 * 1024 * 1024)
             return BadRequest(new { message = "File size must not exceed 10 MB." });
 
-        var webRoot = _env.WebRootPath ?? Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-        var uploadsFolder = Path.Combine(webRoot, "images");
-        Directory.CreateDirectory(uploadsFolder);
-
-        var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
-        var fileName = $"{Guid.NewGuid()}{ext}";
-        var filePath = Path.Combine(uploadsFolder, fileName);
-
-        using (var stream = new FileStream(filePath, FileMode.Create))
+        try
         {
-            await file.CopyToAsync(stream);
+            var url = await _cloudinary.UploadImageAsync(file);
+            return Ok(new { url });
         }
-
-        var url = $"{Request.Scheme}://{Request.Host}/images/{fileName}";
-        return Ok(new { url });
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = ex.Message });
+        }
     }
 }
