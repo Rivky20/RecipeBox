@@ -22,11 +22,11 @@ const system = createSystem(defaultConfig, {
   globalCss: {
     body: {
       bg: '#FFFAF7',
-      fontFamily: "'Heebo', 'Segoe UI', Arial, sans-serif",
+      fontFamily: "'Nunito', sans-serif",
       color: '#1A1A1A',
     },
     'h1, h2, h3, h4, h5, h6': {
-      fontFamily: "'Frank Ruhl Libre', Georgia, serif",
+      fontFamily: "'Nunito', sans-serif",
     },
   },
 });

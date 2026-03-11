@@ -10,8 +10,8 @@
   --border:      #F0DDD0;
   --text:        #1A1A1A;
   --text-muted:  #7D6B62;
-  --font-heading: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
-  --font-body:    'Heebo', 'Segoe UI', Arial, sans-serif;
+  --font-heading: 'Nunito', 'Heebo', sans-serif;
+  --font-body:    'Nunito', 'Heebo', sans-serif;
 }
 
 /* ── Global reset / base ──────────────────────────────────────── */
@@ -54,4 +54,11 @@ a:hover {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.recipe-title,
+.album-title {
+  font-family: 'Nunito', 'Heebo', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }

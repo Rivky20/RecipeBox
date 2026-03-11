@@ -26,6 +26,8 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
   const [instructions, setInstructions] = useState(initial?.instructions ?? '');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string>(initial?.imagePath ?? '');
+  const [imageUrl, setImageUrl] = useState<string>(initial?.imagePath ?? '');
+  const [imageMode, setImageMode] = useState<'upload' | 'url'>('upload');
   const [uploading, setUploading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
@@ -62,7 +64,11 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
     setLoading(true);
     try {
       let imagePath: string | null = initial?.imagePath ?? null;
-      if (imageFile) {
+      if (recipeType === 'Link') {
+        imagePath = imageUrl.trim() || null;
+      } else if (imageMode === 'url') {
+        imagePath = imageUrl.trim() || null;
+      } else if (imageFile) {
         setUploading(true);
         imagePath = await imageService.upload(imageFile);
         setUploading(false);
@@ -87,18 +93,21 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
     }
   };
 
-  const typeBtn = (t: RecipeType): React.CSSProperties => ({
-    padding: '8px 22px',
-    borderRadius: '12px',
-    border: `2px solid ${recipeType === t ? '#E8919C' : '#F0DDD0'}`,
-    background: recipeType === t ? '#FCE8EA' : 'white',
-    color: recipeType === t ? '#C97080' : '#7D6B62',
-    fontWeight: recipeType === t ? 700 : 400,
-    cursor: 'pointer',
-    transition: 'all 0.15s',
-    fontSize: '14px',
-    fontFamily: "'Heebo', sans-serif",
-  });
+  const typeBtn = (active: RecipeType | boolean): React.CSSProperties => {
+    const isActive = typeof active === 'boolean' ? active : recipeType === active;
+    return {
+      padding: '8px 22px',
+      borderRadius: '12px',
+      border: `2px solid ${isActive ? '#E8919C' : '#F0DDD0'}`,
+      background: isActive ? '#FCE8EA' : 'white',
+      color: isActive ? '#C97080' : '#7D6B62',
+      fontWeight: isActive ? 700 : 400,
+      cursor: 'pointer',
+      transition: 'all 0.15s',
+      fontSize: '14px',
+      fontFamily: "'Nunito', sans-serif",
+    };
+  };
 
   return (
     <form onSubmit={handleSubmit} dir="rtl">
@@ -188,49 +197,81 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
           </Grid>
         )}
 
-        {/* Image Upload */}
+        {/* Image */}
         <Field.Root>
           <Field.Label>
             תמונה <Text as="span" color="gray.400" fontSize="sm">(אופציונלי)</Text>
           </Field.Label>
 
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept="image/*"
-            style={{ display: 'none' }}
-            onChange={handleImageChange}
-          />
+          {recipeType === 'Link' ? (
+            /* Link type — URL only */
+            <Input
+              type="url"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              placeholder="https://... (URL לתמונה)"
+            />
+          ) : (
+            /* Text type — toggle between upload / url */
+            <Stack gap={3}>
+              <HStack gap={2}>
+                <button type="button" onClick={() => setImageMode('upload')} style={typeBtn(imageMode === 'upload')}>
+                  ⬆️ העלאת קובץ
+                </button>
+                <button type="button" onClick={() => setImageMode('url')} style={typeBtn(imageMode === 'url')}>
+                  🔗 כתובת URL
+                </button>
+              </HStack>
 
-          <Box
-            border="2px dashed"
-            borderColor={imagePreview ? '#E8919C' : '#F0DDD0'}
-            borderRadius="xl"
-            p={4}
-            textAlign="center"
-            cursor="pointer"
-            bg={imagePreview ? '#FFFAF7' : 'white'}
-            _hover={{ borderColor: '#E8919C', bg: '#FFFAF7' }}
-            transition="all 0.15s"
-            onClick={() => fileInputRef.current?.click()}
-          >
-            {imagePreview ? (
-              <Box>
-                <img
-                  src={imagePreview}
-                  alt="preview"
-                  style={{ maxHeight: '180px', borderRadius: '10px', margin: '0 auto', display: 'block', objectFit: 'cover' }}
+              {imageMode === 'url' ? (
+                <Input
+                  type="url"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  placeholder="https://... (URL לתמונה)"
                 />
-                <Text fontSize="xs" color="#7D6B62" mt={2}>לחץ להחלפה</Text>
-              </Box>
-            ) : (
-              <Box color="#C0A090">
-                <Box fontSize="2xl" mb={1} display="flex" justifyContent="center"><FaCloudUploadAlt /></Box>
-                <Text fontSize="sm" color="#7D6B62">לחץ לבחירת תמונה</Text>
-                <Text fontSize="xs" color="#BBAAA0" mt={1}>JPG, PNG, GIF, WebP — עד 10MB</Text>
-              </Box>
-            )}
-          </Box>
+              ) : (
+                <>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                    onChange={handleImageChange}
+                  />
+                  <Box
+                    border="2px dashed"
+                    borderColor={imagePreview ? '#E8919C' : '#F0DDD0'}
+                    borderRadius="xl"
+                    p={4}
+                    textAlign="center"
+                    cursor="pointer"
+                    bg={imagePreview ? '#FFFAF7' : 'white'}
+                    _hover={{ borderColor: '#E8919C', bg: '#FFFAF7' }}
+                    transition="all 0.15s"
+                    onClick={() => fileInputRef.current?.click()}
+                  >
+                    {imagePreview ? (
+                      <Box>
+                        <img
+                          src={imagePreview}
+                          alt="preview"
+                          style={{ maxHeight: '180px', borderRadius: '10px', margin: '0 auto', display: 'block', objectFit: 'cover' }}
+                        />
+                        <Text fontSize="xs" color="#7D6B62" mt={2}>לחץ להחלפה</Text>
+                      </Box>
+                    ) : (
+                      <Box color="#C0A090">
+                        <Box fontSize="2xl" mb={1} display="flex" justifyContent="center"><FaCloudUploadAlt /></Box>
+                        <Text fontSize="sm" color="#7D6B62">לחץ לבחירת תמונה</Text>
+                        <Text fontSize="xs" color="#BBAAA0" mt={1}>JPG, PNG, GIF, WebP — עד 10MB</Text>
+                      </Box>
+                    )}
+                  </Box>
+                </>
+              )}
+            </Stack>
+          )}
         </Field.Root>
 
         <Button
@@ -243,7 +284,7 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
           fontWeight="700"
           loading={loading || uploading}
           loadingText={uploading ? 'מעלה תמונה...' : 'שומר...'}
-          style={{ fontFamily: "'Heebo', sans-serif" }}
+          style={{ fontFamily: "'Nunito', sans-serif" }}
         >
           {submitLabel}
         </Button>

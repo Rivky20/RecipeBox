@@ -38,8 +38,7 @@ export default function AlbumCard({ album }: Props) {
         <Box
           position="absolute"
           inset={0}
-          bg={album.imagePath ? 'rgba(255,248,243,0.55)' : '#FDFAF8'}
-          backdropFilter={album.imagePath ? 'blur(0px)' : undefined}
+          bg={album.imagePath ? undefined : '#FDFAF8'}
         />
 
         {/* Content */}
@@ -54,52 +53,35 @@ export default function AlbumCard({ album }: Props) {
               px={2.5}
               py={0.5}
               borderRadius="full"
-              style={{ fontFamily: "'Heebo', sans-serif" }}
+              style={{ fontFamily: "'Nunito', sans-serif" }}
             >
               {album.recipeCount} {album.recipeCount === 1 ? 'מתכון' : 'מתכונים'}
             </Box>
           </Box>
 
-          {/* Name */}
-          <Text
-            fontWeight="700"
-            fontSize="xl"
-            color="#1C1008"
-            lineClamp={2}
-            flex={1}
-            style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
-          >
-            {album.name}
-          </Text>
 
-          {/* Description */}
-          {album.description && (
-            <Text
-              fontSize="sm"
-              color="#7D6B62"
-              lineClamp={2}
-              style={{ fontFamily: "'Heebo', sans-serif" }}
-            >
-              {album.description}
-            </Text>
-          )}
+          {/* Spacer */}
+          <Box flex={1} />
 
           {/* Footer */}
           <Box
-            mt={3}
             pt={3}
             borderTop="1px solid"
-            borderColor="rgba(210,175,140,0.25)"
+            borderColor="rgba(210,175,140,0.5)"
             display="flex"
-            justifyContent="flex-end"
+            justifyContent="center"
+            bg="rgba(255,248,243,0.6)"
+            mx={-5}
+            px={5}
+            pb={1}
           >
             <Text
-              fontSize="sm"
-              fontWeight="600"
-              color="#A0785A"
-              style={{ fontFamily: "'Heebo', sans-serif" }}
+              fontWeight="700"
+              fontSize="lg"
+              color="#1C1008"
+              className="album-title"
             >
-              צפה במתכונים ←
+              {album.name}
             </Text>
           </Box>
         </Box>

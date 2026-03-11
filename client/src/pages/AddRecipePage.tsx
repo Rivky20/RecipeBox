@@ -60,7 +60,7 @@ export default function AddRecipePage() {
         <Heading
           size="xl"
           mb={3}
-          style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif", color: '#C97080' }}
+          style={{ fontFamily: "'Nunito', sans-serif", color: '#C97080' }}
         >
           המתכון נוסף בהצלחה!
         </Heading>
@@ -93,7 +93,7 @@ export default function AddRecipePage() {
       <Heading
         size="xl"
         mb={8}
-        style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+        style={{ fontFamily: "'Nunito', sans-serif" }}
       >
         הוספת מתכון חדש
       </Heading>

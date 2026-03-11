@@ -72,6 +72,7 @@ export interface Recipe {
   isOwner?: boolean;
   albumName?: string;
   userEmail?: string;
+  userName?: string;
 }
 
 export interface RecipeQuery {

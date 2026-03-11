@@ -28,7 +28,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
   // Display "אני" for own recipes, or email-username for others
   const ownerLabel = isOwner
     ? 'אני'
-    : (recipe.userEmail?.split('@')[0] ?? '');
+    : (recipe.userName || recipe.userEmail?.split('@')[0] || '');
 
   return (
     <Box
@@ -84,7 +84,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
               fontWeight="700"
               fontSize="md"
               color="#1A1A1A"
-              style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+              className="recipe-title"
               lineClamp={2}
               flex={1}
             >
@@ -105,7 +105,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             fontSize="sm"
             lineClamp={2}
             flex={1}
-            style={{ fontFamily: "'Rubik', 'Heebo', sans-serif" }}
+            style={{ fontFamily: "'Nunito', sans-serif" }}
           >
             {recipe.description}
           </Text>
@@ -125,7 +125,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             px={2}
             py="2px"
             borderRadius="full"
-            style={{ fontFamily: "'Heebo', sans-serif" }}
+            style={{ fontFamily: "'Nunito', sans-serif" }}
           >
             {ownerLabel}
           </Box>
@@ -143,7 +143,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             _hover={{ bg: '#FCE8EA' }}
             borderRadius="xl"
             fontWeight="600"
-            style={{ fontFamily: "'Heebo', sans-serif" }}
+            style={{ fontFamily: "'Nunito', sans-serif" }}
           >
             צפה במתכון
           </Button>

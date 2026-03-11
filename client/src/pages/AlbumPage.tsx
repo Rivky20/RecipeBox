@@ -87,7 +87,7 @@ export default function AlbumPage() {
           <HStack gap={3} align="center">
             <Heading
               size="xl"
-              style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+              style={{ fontFamily: "'Nunito', sans-serif" }}
             >
               {album?.name}
             </Heading>

@@ -197,6 +197,7 @@ public class RecipeService : IRecipeService
             AlbumName = recipe.Album?.Name ?? string.Empty,
             UserId = recipe.UserId,
             UserEmail = recipe.User?.Email ?? string.Empty,
+            UserName = recipe.User?.UserName,
             CreatedAt = recipe.CreatedAt,
             IsFavorite = requestingUserId.HasValue &&
                          recipe.FavoritedBy.Any(f => f.UserId == requestingUserId.Value)

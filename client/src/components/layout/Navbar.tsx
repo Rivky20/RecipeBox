@@ -36,7 +36,7 @@ export default function Navbar() {
             <Text
               fontWeight="700"
               fontSize="xl"
-              style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+              style={{ fontFamily: "'Nunito', sans-serif" }}
               color="#1A1A1A"
               letterSpacing="0.02em"
             >

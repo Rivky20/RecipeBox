@@ -190,7 +190,7 @@ export default function RecipePage() {
       {/* Description */}
       {recipe.description && (
         <Text color="gray.700" mb={5} fontSize="lg"
-          style={{ fontFamily: "'Rubik', 'Heebo', sans-serif" }}
+          style={{ fontFamily: "'Nunito', sans-serif" }}
         >
           {recipe.description}
         </Text>
@@ -250,14 +250,14 @@ export default function RecipePage() {
             <HStack align="flex-start" gap={6} wrap="wrap">
               <Box flex={1} minW="200px">
                 <Heading size="md" mb={3}
-                  style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+                  style={{ fontFamily: "'Nunito', sans-serif" }}
                 >
                   מצרכים
                 </Heading>
                 <Box
                   as="pre"
                   whiteSpace="pre-wrap"
-                  style={{ fontFamily: "'Rubik', 'Heebo', sans-serif" }}
+                  style={{ fontFamily: "'Nunito', sans-serif" }}
                   bg="#FFF8F4"
                   border="1px solid"
                   borderColor="#F0DDD0"
@@ -272,14 +272,14 @@ export default function RecipePage() {
 
               <Box flex={2} minW="250px">
                 <Heading size="md" mb={3}
-                  style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+                  style={{ fontFamily: "'Nunito', sans-serif" }}
                 >
                   הוראות הכנה
                 </Heading>
                 <Box
                   as="pre"
                   whiteSpace="pre-wrap"
-                  style={{ fontFamily: "'Rubik', 'Heebo', sans-serif" }}
+                  style={{ fontFamily: "'Nunito', sans-serif" }}
                   bg="#FFF8F4"
                   border="1px solid"
                   borderColor="#F0DDD0"

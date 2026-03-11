@@ -37,7 +37,7 @@ export default function Footer() {
               fontWeight="700"
               fontSize="md"
               color="#1A1A1A"
-              style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+              style={{ fontFamily: "'Nunito', sans-serif" }}
             >
               RecipeBox
             </Text>
@@ -73,7 +73,7 @@ export default function Footer() {
             color="#1A1A1A"
             letterSpacing="0.08em"
             mb={1}
-            style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+            style={{ fontFamily: "'Nunito', sans-serif" }}
           >
             RIVKY GABAY
           </Text>

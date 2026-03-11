@@ -178,7 +178,7 @@ export default function HomePage() {
       {/* ── Albums ── */}
       <HStack justify="space-between" mb={8} wrap="wrap" gap={4}>
         <div>
-          <Heading size="2xl" mb={1} style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}>
+          <Heading size="2xl" mb={1} style={{ fontFamily: "'Nunito', sans-serif" }}>
             אלבומי מתכונים
           </Heading>
           <Text color="#7D6B62">עיין באוסף קטגוריות המתכונים שלנו</Text>
@@ -221,7 +221,7 @@ export default function HomePage() {
         <Box mt={12}>
           <HStack justify="space-between" align="baseline" mb={5}>
             <Text fontSize="xs" fontWeight="600" letterSpacing="0.1em" color="#B08A72"
-              textTransform="uppercase" style={{ fontFamily: "'Heebo', sans-serif" }}>
+              textTransform="uppercase" style={{ fontFamily: "'Nunito', sans-serif" }}>
               נוספו לאחרונה
             </Text>
             <Box h="1px" flex={1} mx={4} bg="linear-gradient(90deg, #F0DDD0, transparent)" />
@@ -232,13 +232,13 @@ export default function HomePage() {
                 <Box display="flex" alignItems="center" gap={4} px={4} py={3}
                   borderRadius="2xl" transition="background 0.15s" _hover={{ bg: '#FDF6F0' }} role="group">
                   <Text fontSize="xs" fontWeight="700" color="#D4B8A8" w="18px" textAlign="center"
-                    flexShrink={0} style={{ fontFamily: "'Heebo', sans-serif" }}>
+                    flexShrink={0} style={{ fontFamily: "'Nunito', sans-serif" }}>
                     {i + 1}
                   </Text>
                   <Box w="4px" h="4px" borderRadius="full" bg="#E8C9B8" flexShrink={0} />
                   <Box flex={1} minW={0}>
                     <Text fontWeight="600" fontSize="md" color="#2D1F17" lineClamp={1}
-                      style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
+                      style={{ fontFamily: "'Nunito', sans-serif" }}
                       _groupHover={{ color: '#7D4F3A' }} transition="color 0.15s">
                       {recipe.name}
                     </Text>
