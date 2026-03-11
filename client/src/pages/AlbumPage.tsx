@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Badge, Button, Heading, HStack, SimpleGrid, Text } from '@chakra-ui/react';
+import { Badge, Box, Button, Heading, HStack, SimpleGrid, Text } from '@chakra-ui/react';
 import { Album, Recipe } from '../types';
 import { albumService } from '../services/albumService';
 import { recipeService } from '../services/recipeService';
@@ -122,8 +122,10 @@ export default function AlbumPage() {
         )}
       </HStack>
 
-      <HStack mb={6} gap={3} wrap="wrap">
-        <SearchBar value={search} onChange={setSearch} />
+      <HStack mb={6} gap={3}>
+        <Box flex={1}>
+          <SearchBar value={search} onChange={setSearch} />
+        </Box>
         <SortSelect value={sortBy} onChange={setSortBy} />
       </HStack>
 

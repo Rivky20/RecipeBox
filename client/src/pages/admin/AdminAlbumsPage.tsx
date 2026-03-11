@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Box, Button, Field, Heading, HStack, Input, Stack, Table, Text, Textarea,
 } from '@chakra-ui/react';
 import { Album, CreateAlbumRequest } from '../../types';
 import { albumService } from '../../services/albumService';
+import { imageService } from '../../services/imageService';
 import Spinner from '../../components/common/Spinner';
 import ErrorMessage from '../../components/common/ErrorMessage';
 import ConfirmDialog from '../../components/common/ConfirmDialog';
@@ -19,8 +20,11 @@ export default function AdminAlbumsPage() {
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [imagePath, setImagePath] = useState('');
+  const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Delete
   const [deleteTarget, setDeleteTarget] = useState<Album | null>(null);
@@ -34,15 +38,29 @@ export default function AdminAlbumsPage() {
       .catch(() => setError('טעינת האלבומים נכשלה.'))
       .finally(() => setLoading(false));
 
-  const openAdd = () => { setEditing(null); setName(''); setDescription(''); setFormError(''); setShowForm(true); };
-  const openEdit = (a: Album) => { setEditing(a); setName(a.name); setDescription(a.description); setFormError(''); setShowForm(true); };
-  const closeForm = () => setShowForm(false);
+  const openAdd = () => { setEditing(null); setName(''); setDescription(''); setImagePath(''); setFormError(''); setShowForm(true); };
+  const openEdit = (a: Album) => { setEditing(a); setName(a.name); setDescription(a.description); setImagePath(a.imagePath ?? ''); setFormError(''); setShowForm(true); };
+  const closeForm = () => { setShowForm(false); if (fileInputRef.current) fileInputRef.current.value = ''; };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    try {
+      const url = await imageService.upload(file);
+      setImagePath(url);
+    } catch {
+      setFormError('העלאת התמונה נכשלה.');
+    } finally {
+      setUploading(false);
+    }
+  };
 
   const handleSave = async () => {
     if (!name.trim()) { setFormError('שם הוא שדה חובה.'); return; }
     setSaving(true);
     try {
-      const payload: CreateAlbumRequest = { name, description };
+      const payload: CreateAlbumRequest = { name, description, imagePath: imagePath || null };
       if (editing) {
         const updated = await albumService.updateAlbum(editing.id, payload);
         setAlbums((prev) => prev.map((a) => a.id === editing.id ? updated : a));
@@ -96,6 +114,45 @@ export default function AdminAlbumsPage() {
             <Field.Root>
               <Field.Label>תיאור</Field.Label>
               <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={2} />
+            </Field.Root>
+            <Field.Root>
+              <Field.Label>תמונת רקע</Field.Label>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                style={{ display: 'none' }}
+                onChange={handleFileChange}
+              />
+              <HStack gap={3} align="center">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  colorPalette="teal"
+                  loading={uploading}
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  {imagePath ? 'החלף תמונה' : 'העלה תמונה'}
+                </Button>
+                {imagePath && (
+                  <Box
+                    as="img"
+                    src={imagePath}
+                    alt="תצוגה מקדימה"
+                    h="48px"
+                    w="72px"
+                    objectFit="cover"
+                    borderRadius="md"
+                    border="1px solid"
+                    borderColor="#EDE0D8"
+                  />
+                )}
+                {imagePath && (
+                  <Button size="xs" variant="ghost" colorPalette="red" onClick={() => { setImagePath(''); if (fileInputRef.current) fileInputRef.current.value = ''; }}>
+                    הסר
+                  </Button>
+                )}
+              </HStack>
             </Field.Root>
             <HStack>
               <Button colorPalette="teal" onClick={handleSave} loading={saving}>שמור</Button>

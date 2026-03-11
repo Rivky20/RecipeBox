@@ -10,4 +10,6 @@ public class UpdateAlbumDto
 
     [MaxLength(500)]
     public string? Description { get; set; }
+
+    public string? ImagePath { get; set; }
 }

@@ -24,6 +24,7 @@ public class AlbumService : IAlbumService
                 Id = a.Id,
                 Name = a.Name,
                 Description = a.Description,
+                ImagePath = a.ImagePath,
                 CreatedAt = a.CreatedAt,
                 RecipeCount = a.Recipes.Count
             })
@@ -43,6 +44,7 @@ public class AlbumService : IAlbumService
             Id = album.Id,
             Name = album.Name,
             Description = album.Description,
+            ImagePath = album.ImagePath,
             CreatedAt = album.CreatedAt,
             RecipeCount = album.Recipes.Count
         };
@@ -53,7 +55,8 @@ public class AlbumService : IAlbumService
         var album = new Album
         {
             Name = dto.Name,
-            Description = dto.Description ?? string.Empty
+            Description = dto.Description ?? string.Empty,
+            ImagePath = dto.ImagePath
         };
 
         _db.Albums.Add(album);
@@ -64,6 +67,7 @@ public class AlbumService : IAlbumService
             Id = album.Id,
             Name = album.Name,
             Description = album.Description,
+            ImagePath = album.ImagePath,
             CreatedAt = album.CreatedAt,
             RecipeCount = 0
         };
@@ -76,6 +80,7 @@ public class AlbumService : IAlbumService
 
         album.Name = dto.Name;
         album.Description = dto.Description ?? string.Empty;
+        album.ImagePath = dto.ImagePath;
 
         await _db.SaveChangesAsync();
 
@@ -84,6 +89,7 @@ public class AlbumService : IAlbumService
             Id = album.Id,
             Name = album.Name,
             Description = album.Description,
+            ImagePath = album.ImagePath,
             CreatedAt = album.CreatedAt,
             RecipeCount = await _db.Recipes.CountAsync(r => r.AlbumId == id)
         };

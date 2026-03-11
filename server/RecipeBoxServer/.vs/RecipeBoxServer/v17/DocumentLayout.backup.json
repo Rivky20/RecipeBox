@@ -174,7 +174,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -215,6 +215,19 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T23:09:02.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
+              "RelativeDocumentMoniker": "Models\\Recipe.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
+              "RelativeToolTip": "Models\\Recipe.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:05:15.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -287,19 +300,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T17:40:21.322Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Recipe.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
-              "RelativeDocumentMoniker": "Models\\Recipe.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\RecipeBox\u05E4\u05E8\u05D5\u05D9\u05D9\u05E7\u05D8\\RecipeBox\\server\\RecipeBoxServer\\Models\\Recipe.cs",
-              "RelativeToolTip": "Models\\Recipe.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAswBMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-14T17:05:15.845Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

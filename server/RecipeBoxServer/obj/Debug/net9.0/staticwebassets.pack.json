@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\images\\.gitkeep"
     },
     {
+      "Id": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png",
+      "PackagePath": "staticwebassets\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png"
+    },
+    {
+      "Id": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png",
+      "PackagePath": "staticwebassets\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.RecipeBoxServer.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

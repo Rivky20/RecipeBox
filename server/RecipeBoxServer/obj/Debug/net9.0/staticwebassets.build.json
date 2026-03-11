@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jtowHvCjMIymATSBo0B+i7TJGacaqhZDhHg/h0SDTu4=",
+  "Hash": "GSeUy6qbZijqMX1e7bPX3Zoprv1a/rb7/3DPcXhnfqQ=",
   "Source": "RecipeBoxServer",
   "BasePath": "_content/RecipeBoxServer",
   "Mode": "Default",
@@ -36,6 +36,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\.gitkeep"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png",
+      "SourceId": "RecipeBoxServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\",
+      "BasePath": "_content/RecipeBoxServer",
+      "RelativePath": "images/cac22f34-a806-4fc7-9882-061f806a2f05#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "skvloa6sqy",
+      "Integrity": "5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png"
+    },
+    {
+      "Identity": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png",
+      "SourceId": "RecipeBoxServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\",
+      "BasePath": "_content/RecipeBoxServer",
+      "RelativePath": "images/ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "skvloa6sqy",
+      "Integrity": "5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png"
     }
   ],
   "Endpoints": [
@@ -118,6 +160,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-AbpHGcgLb+kRsJGnwFEktk7uzpZOCcBY74+YBdrKVGs="
+        }
+      ]
+    },
+    {
+      "Route": "images/cac22f34-a806-4fc7-9882-061f806a2f05.png",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 15:16:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0="
+        }
+      ]
+    },
+    {
+      "Route": "images/cac22f34-a806-4fc7-9882-061f806a2f05.skvloa6sqy.png",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\cac22f34-a806-4fc7-9882-061f806a2f05.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 15:16:35 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "skvloa6sqy"
+        },
+        {
+          "Name": "label",
+          "Value": "images/cac22f34-a806-4fc7-9882-061f806a2f05.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0="
+        }
+      ]
+    },
+    {
+      "Route": "images/ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:14:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0="
+        }
+      ]
+    },
+    {
+      "Route": "images/ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.skvloa6sqy.png",
+      "AssetFile": "C:\\Users\\user1\\Desktop\\RecipeBoxפרוייקט\\RecipeBox\\server\\RecipeBoxServer\\wwwroot\\images\\ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331093"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 10 Mar 2026 14:14:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "skvloa6sqy"
+        },
+        {
+          "Name": "label",
+          "Value": "images/ef418c4f-82a4-4d99-a1ca-d6a1a69cc8d1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5IwzCjg+avvFt/Bn5dJWBXZNXnYVGNLwBCO8jF6RtI0="
         }
       ]
     }

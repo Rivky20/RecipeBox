@@ -1,17 +1,6 @@
-import { Box, Text, Button } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { Album } from '../../types';
-import { FaBookOpen } from 'react-icons/fa';
-
-const PARQUET_BG: React.CSSProperties = {
-  backgroundColor: '#FFFFFF',
-  backgroundImage: `
-    linear-gradient(45deg, rgba(210,175,140,0.055) 25%, transparent 25%, transparent 75%, rgba(210,175,140,0.055) 75%),
-    linear-gradient(-45deg, rgba(210,175,140,0.055) 25%, transparent 25%, transparent 75%, rgba(210,175,140,0.055) 75%)
-  `,
-  backgroundSize: '28px 28px',
-  backgroundPosition: '0 0, 14px 14px',
-};
 
 interface Props {
   album: Album;
@@ -19,94 +8,102 @@ interface Props {
 
 export default function AlbumCard({ album }: Props) {
   return (
-    <Box
-      style={PARQUET_BG}
-      border="1px solid"
-      borderColor="#F0DDD0"
-      borderRadius="2xl"
-      overflow="hidden"
-      boxShadow="0 2px 14px rgba(210,175,140,0.12)"
-      transition="all 0.22s"
-      cursor="pointer"
-      _hover={{ boxShadow: '0 8px 32px rgba(210,175,140,0.22)', transform: 'translateY(-3px)' }}
-      display="flex"
-      flexDirection="column"
-    >
-      {/* Top accent stripe */}
-      <Box h="4px" bg="linear-gradient(90deg, #E8919C, #F5C6CB, #F5E1D0)" />
+    <Link to={`/albums/${album.id}`} style={{ textDecoration: 'none' }}>
+      <Box
+        position="relative"
+        borderRadius="2xl"
+        overflow="hidden"
+        border="1px solid"
+        borderColor="#EDE0D8"
+        boxShadow="0 1px 8px rgba(180,140,110,0.08)"
+        transition="all 0.2s"
+        _hover={{ boxShadow: '0 6px 24px rgba(180,140,110,0.16)', transform: 'translateY(-2px)' }}
+        cursor="pointer"
+        h="190px"
+        display="flex"
+        flexDirection="column"
+      >
+        {/* Background image */}
+        {album.imagePath && (
+          <Box
+            position="absolute"
+            inset={0}
+            backgroundImage={`url(${album.imagePath})`}
+            backgroundSize="cover"
+            backgroundPosition="center"
+          />
+        )}
 
-      <Box p={5} flex={1} display="flex" flexDirection="column" gap={3}>
-        {/* Icon + count row */}
-        <Box display="flex" justifyContent="space-between" alignItems="center">
-          <Box
-            w="42px"
-            h="42px"
-            bg="#FCE8EA"
-            borderRadius="xl"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            color="#E8919C"
-            fontSize="lg"
-          >
-            <FaBookOpen />
+        {/* Overlay */}
+        <Box
+          position="absolute"
+          inset={0}
+          bg={album.imagePath ? 'rgba(255,248,243,0.55)' : '#FDFAF8'}
+          backdropFilter={album.imagePath ? 'blur(0px)' : undefined}
+        />
+
+        {/* Content */}
+        <Box position="relative" p={5} flex={1} display="flex" flexDirection="column" gap={2}>
+          {/* Count badge */}
+          <Box display="flex" justifyContent="flex-end">
+            <Box
+              bg="rgba(245,225,208,0.9)"
+              color="#7D4F3A"
+              fontSize="xs"
+              fontWeight="600"
+              px={2.5}
+              py={0.5}
+              borderRadius="full"
+              style={{ fontFamily: "'Heebo', sans-serif" }}
+            >
+              {album.recipeCount} {album.recipeCount === 1 ? 'מתכון' : 'מתכונים'}
+            </Box>
           </Box>
-          <Box
-            bg="#F5E1D0"
-            color="#7D6B62"
-            fontSize="xs"
-            fontWeight="600"
-            px={3}
-            py={1}
-            borderRadius="full"
-            style={{ fontFamily: "'Heebo', sans-serif" }}
+
+          {/* Name */}
+          <Text
+            fontWeight="700"
+            fontSize="xl"
+            color="#1C1008"
+            lineClamp={2}
+            flex={1}
+            style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
           >
-            {album.recipeCount} {album.recipeCount === 1 ? 'מתכון' : 'מתכונים'}
+            {album.name}
+          </Text>
+
+          {/* Description */}
+          {album.description && (
+            <Text
+              fontSize="sm"
+              color="#7D6B62"
+              lineClamp={2}
+              style={{ fontFamily: "'Heebo', sans-serif" }}
+            >
+              {album.description}
+            </Text>
+          )}
+
+          {/* Footer */}
+          <Box
+            mt={3}
+            pt={3}
+            borderTop="1px solid"
+            borderColor="rgba(210,175,140,0.25)"
+            display="flex"
+            justifyContent="flex-end"
+          >
+            <Text
+              fontSize="sm"
+              fontWeight="600"
+              color="#A0785A"
+              style={{ fontFamily: "'Heebo', sans-serif" }}
+            >
+              צפה במתכונים ←
+            </Text>
           </Box>
         </Box>
-
-        {/* Album Name */}
-        <Text
-          fontWeight="700"
-          fontSize="lg"
-          color="#1A1A1A"
-          style={{ fontFamily: "'Frank Ruhl Libre', Georgia, serif" }}
-          lineClamp={1}
-        >
-          {album.name}
-        </Text>
-
-        {/* Description */}
-        <Text
-          color="#7D6B62"
-          fontSize="sm"
-          lineClamp={2}
-          flex={1}
-          style={{ fontFamily: "'Rubik', 'Heebo', sans-serif" }}
-        >
-          {album.description || 'אין תיאור'}
-        </Text>
       </Box>
-
-      {/* Footer */}
-      <Box px={5} pb={5}>
-        <Link to={`/albums/${album.id}`} style={{ display: 'block' }}>
-          <Button
-            width="full"
-            size="sm"
-            bg="#F5E1D0"
-            color="#7D4F3A"
-            _hover={{ bg: '#EDD0BB', color: '#5C3520' }}
-            borderRadius="full"
-            fontWeight="700"
-            letterSpacing="0.04em"
-            fontSize="sm"
-            style={{ fontFamily: "'Heebo', sans-serif" }}
-          >
-            צפה במתכונים →
-          </Button>
-        </Link>
-      </Box>
-    </Box>
+    </Link>
   );
 }

@@ -33,17 +33,20 @@ export interface Album {
   id: number;
   name: string;
   description: string;
+  imagePath?: string | null;
   recipeCount: number;
 }
 
 export interface CreateAlbumRequest {
   name: string;
   description: string;
+  imagePath?: string | null;
 }
 
 export interface UpdateAlbumRequest {
   name: string;
   description: string;
+  imagePath?: string | null;
 }
 
 // ─── Recipes ─────────────────────────────────────────────────────────────────
