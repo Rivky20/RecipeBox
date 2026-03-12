@@ -6,7 +6,7 @@
 
 <h3>Your Personal Digital Recipe Manager</h3>
 
-<הp><em>Store · Organize · Discover · Cook — all powered by AI</em></p>
+<p><em>Store · Organize · Discover · Cook — all powered by AI</em></p>
 
 <br/>
 
