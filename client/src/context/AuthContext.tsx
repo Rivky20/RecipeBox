@@ -33,6 +33,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, [user]);
 
+  useEffect(() => {
+    const handle = () => setUser(null);
+    window.addEventListener('session-expired', handle);
+    return () => window.removeEventListener('session-expired', handle);
+  }, []);
+
   const login = async (email: string, password: string) => {
     const data = await authService.login({ email, password });
     const username = data.userName || email.split('@')[0];

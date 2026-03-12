@@ -1,10 +1,11 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type ModalMode = 'login' | 'register';
 
 interface AuthModalContextValue {
   isOpen: boolean;
   mode: ModalMode;
+  sessionExpired: boolean;
   openLogin: () => void;
   openRegister: () => void;
   close: () => void;
@@ -16,13 +17,24 @@ const AuthModalContext = createContext<AuthModalContextValue | null>(null);
 export function AuthModalProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<ModalMode>('login');
+  const [sessionExpired, setSessionExpired] = useState(false);
+
+  useEffect(() => {
+    const handle = () => {
+      setSessionExpired(true);
+      setMode('login');
+      setIsOpen(true);
+    };
+    window.addEventListener('session-expired', handle);
+    return () => window.removeEventListener('session-expired', handle);
+  }, []);
 
   const openLogin = () => { setMode('login'); setIsOpen(true); };
   const openRegister = () => { setMode('register'); setIsOpen(true); };
-  const close = () => setIsOpen(false);
+  const close = () => { setIsOpen(false); setSessionExpired(false); };
 
   return (
-    <AuthModalContext.Provider value={{ isOpen, mode, openLogin, openRegister, close, setMode }}>
+    <AuthModalContext.Provider value={{ isOpen, mode, sessionExpired, openLogin, openRegister, close, setMode }}>
       {children}
     </AuthModalContext.Provider>
   );

@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useAuthModal } from '../../context/AuthModalContext';
 
 export default function LoginModal() {
-  const { isOpen, mode, setMode, close } = useAuthModal();
+  const { isOpen, mode, sessionExpired, setMode, close } = useAuthModal();
   const { login, register } = useAuth();
 
   // Login state
@@ -143,6 +143,22 @@ export default function LoginModal() {
         {mode === 'login' && (
           <form onSubmit={handleLogin}>
             <Stack gap={4}>
+              {sessionExpired && (
+                <Box
+                  bg="#FFF3CD"
+                  border="1px solid #F5C842"
+                  borderRadius="lg"
+                  px={4}
+                  py={3}
+                  textAlign="center"
+                  fontSize="sm"
+                  fontWeight="600"
+                  color="#7D5A00"
+                  dir="rtl"
+                >
+                  פג תוקף החיבור שלך — אנא התחבר מחדש
+                </Box>
+              )}
               <Heading size="lg" textAlign="center" color="teal.700">ברוך השב!</Heading>
 
               <Field.Root>
