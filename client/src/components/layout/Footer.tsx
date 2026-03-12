@@ -79,7 +79,7 @@ export default function Footer() {
           </Text>
           <HStack gap={1} justify="flex-end">
             <Text fontSize="xs" color="#7D6B62">
-              © 2025 RecipeBox. All rights reserved.
+              © 2026 RecipeBox. All rights reserved.
             </Text>
             <Box color="#C9848C" fontSize="xs"><FaHeart /></Box>
           </HStack>

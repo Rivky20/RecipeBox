@@ -26,6 +26,9 @@ export default function Navbar() {
       borderBottom="1px solid"
       borderColor="#F0DDD0"
       boxShadow="0 2px 12px rgba(232,145,156,0.08)"
+      position="sticky"
+      top={0}
+      zIndex={100}
       dir="ltr"
     >
       <Flex align="center" justify="space-between" maxW="1200px" mx="auto">

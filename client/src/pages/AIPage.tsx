@@ -92,7 +92,7 @@ export default function AIPage() {
           🧊 מה יש לך במקרר?
         </Text>
         <Text color="#7D6B62" fontSize="md">
-          כתוב את החומרים שיש לך ונמצא מתכון מותאם אישית
+          כתוב חומרים שיש לך — או שם מתכון שתרצי להכין
         </Text>
       </VStack>
 
@@ -108,7 +108,7 @@ export default function AIPage() {
         <Textarea
           value={ingredients}
           onChange={e => setIngredients(e.target.value)}
-          placeholder="לדוגמה: עוף, אורז, שום, עגבניות..."
+          placeholder="לדוגמה: עוף, אורז, שום... — או: פסטה בולונז, עוגת שוקולד..."
           rows={3}
           border="1px solid #F0DDD0"
           borderRadius="10px"
@@ -207,7 +207,7 @@ export default function AIPage() {
             <>
               {result.found.length === 0 && (
                 <Text fontWeight="700" fontSize="lg" color="#1A1A1A">
-                  לא נמצאו מתכונים קיימים — יצרנו מתכון חדש עבורך:
+                  לא נמצא מתכון קיים — הכנו מתכון חדש עבורך:
                 </Text>
               )}
               <Box
