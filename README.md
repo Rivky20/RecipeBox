@@ -423,25 +423,21 @@ RecipeBox/
 | 🏠 Homepage | 📁 Album View |
 |:---:|:---:|
 | _Browse all recipes with live search_ | _Recipes organized by category_ |
-| `[screenshot coming soon]` | `[screenshot coming soon]` |
+| <img src="docs/screenshots/home.png" width="400"/> | <img src="docs/screenshots/albums.png" width="400"/> |
 
 <br/>
 
 | 📖 Recipe Detail | ➕ Add Recipe |
 |:---:|:---:|
 | _Full recipe with photo, ingredients & steps_ | _Image upload form with rich fields_ |
-| `[screenshot coming soon]` | `[screenshot coming soon]` |
+| <img src="docs/screenshots/recipe.png" width="400"/> | <img src="docs/screenshots/add-recipe.png" width="400"/> |
 
 <br/>
 
 | 🤖 AI Finder | 🛡️ Admin Dashboard |
 |:---:|:---:|
 | _Enter ingredients → AI generates recipes_ | _Manage users, albums, and statistics_ |
-| `[screenshot coming soon]` | `[screenshot coming soon]` |
-
-<br/>
-
-> 💡 To add real screenshots: save images to `/docs/screenshots/` and replace each `[screenshot coming soon]` with `<img src="docs/screenshots/home.png" width="400"/>`
+| <img src="docs/screenshots/ai1.png" width="400"/><br/> <img src="docs/screenshots/ai2.png" width="400"/> | <img src="docs/screenshots/admin.png" width="400"/> |
 
 </div>
 
