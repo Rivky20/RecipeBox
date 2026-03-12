@@ -6,7 +6,7 @@
 
 <h3>Your Personal Digital Recipe Manager</h3>
 
-<p><em>Store · Organize · Discover · Cook — all powered by AI</em></p>
+<הp><em>Store · Organize · Discover · Cook — all powered by AI</em></p>
 
 <br/>
 
@@ -37,7 +37,7 @@
     <img src="https://img.shields.io/badge/🌐_Live_Demo-FF6B35?style=for-the-badge" alt="Live Demo"/>
   </a>
   &nbsp;
-  <a href="#-api-overview">
+  <a href="#-api-reference">
     <img src="https://img.shields.io/badge/📖_API_Docs-4169E1?style=for-the-badge" alt="API Docs"/>
   </a>
   &nbsp;
@@ -95,6 +95,7 @@
 | 📁 **Album System** | Organize recipes into curated category albums | ✅ |
 | ❤️ **Favorites** | Save and manage your personal favorites list | ✅ |
 | 🤖 **AI Recipe Finder** | Enter ingredients → get instant AI-suggested recipes | ✅ |
+| ✨ **AI Name & Description** | AI suggests a recipe name and description based on your ingredients | ✅ |
 | 🖼️ **Image Upload** | Recipe photos hosted on Cloudinary CDN | ✅ |
 | 🔍 **Search & Sort** | Filter by name, sort by date or title | ✅ |
 | 🛡️ **Admin Dashboard** | Manage users, albums, recipes, and system stats | ✅ |

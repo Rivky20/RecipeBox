@@ -113,7 +113,10 @@ export async function improveText(text: string, type: 'ingredients' | 'instructi
 export async function suggestNameAndDescription(ingredients: string): Promise<{ name: string; description: string }> {
   const prompt = `בהתבסס על המרכיבים הבאים, הצע שם יפה ותיאור קצר (משפט אחד) למתכון בעברית. החזר JSON בלבד ללא הסברים נוספים:\n{"name":"...","description":"..."}\n\nמרכיבים:\n${ingredients}`;
   const text = await groqChat(prompt);
-  return JSON.parse(text.replace(/```json|```/g, '').trim());
+  const clean = text.replace(/```json|```/g, '').trim();
+  const match = clean.match(/\{[\s\S]*\}/);
+  if (!match) throw new Error('Invalid AI response');
+  return JSON.parse(match[0]);
 }
 
 export async function convertUnits(ingredients: string, to: 'cups' | 'grams'): Promise<string> {

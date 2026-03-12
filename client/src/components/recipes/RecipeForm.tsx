@@ -40,6 +40,7 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
   const [interimText, setInterimText] = useState('');
   const recognitionRef = useRef<any>(null);
   const [aiLoading, setAiLoading] = useState<string | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
   const [undoIngredients, setUndoIngredients] = useState<string | null>(null);
   const [undoInstructions, setUndoInstructions] = useState<string | null>(null);
 
@@ -148,7 +149,9 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
         setUndoInstructions(text);
         setInstructions(improved);
       }
-    } catch { /* silent */ }
+    } catch {
+      setAiError('שיפור הטקסט נכשל — נסה שוב.');
+    }
     setAiLoading(null);
   };
 
@@ -165,11 +168,14 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
   const handleSuggest = async () => {
     if (!ingredients.trim()) return;
     setAiLoading('suggest');
+    setAiError(null);
     try {
       const { name: n, description: d } = await suggestNameAndDescription(ingredients);
       setName(n);
       setDescription(d);
-    } catch { /* silent */ }
+    } catch {
+      setAiError('לא הצלחנו להציע שם — נסה שוב.');
+    }
     setAiLoading(null);
   };
 
@@ -397,7 +403,10 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
 
         {/* AI Toolbar — suggest name/description */}
         {recipeType === 'Text' && (
-          <HStack justify="flex-end">
+          <HStack justify="flex-end" align="center" gap={3}>
+            {aiError && (
+              <Text fontSize="xs" color="#9E6870">{aiError}</Text>
+            )}
             <AIPillBtn
               label="הצע שם ותיאור לפי המרכיבים"
               loadingKey="suggest"

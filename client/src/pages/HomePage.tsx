@@ -284,32 +284,37 @@ export default function HomePage() {
             </Heading>
             <Box h="1px" flex={1} mx={4} bg="linear-gradient(90deg, #F0DDD0, transparent)" />
           </HStack>
-          <Box display="flex" flexDirection="column" gap={2}>
+          <Box display="flex" flexDirection="column" gap={3}>
             {recentRecipes.map((recipe, i) => (
               <Link key={recipe.id} to={`/recipes/${recipe.id}`} style={{ textDecoration: 'none' }}>
-                <Box display="flex" alignItems="center" gap={4} px={4} py={3}
+                <Box display="flex" alignItems="center" gap={4} px={5} py={4}
                   borderRadius="2xl" transition="background 0.15s" _hover={{ bg: '#FDF6F0' }} role="group">
-                  <Text fontSize="xs" fontWeight="700" color="#D4B8A8" w="18px" textAlign="center"
+                  <Text fontSize="sm" fontWeight="700" color="#D4B8A8" w="22px" textAlign="center"
                     flexShrink={0} style={{ fontFamily: "'Nunito', sans-serif" }}>
                     {i + 1}
                   </Text>
-                  <Box w="4px" h="4px" borderRadius="full" bg="#E8C9B8" flexShrink={0} />
+                  <Box w="52px" h="52px" borderRadius="xl" overflow="hidden" flexShrink={0}>
+                    {recipe.imagePath && (
+                      <img src={recipe.imagePath} alt={recipe.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                  </Box>
                   <Box flex={1} minW={0}>
-                    <Text fontWeight="600" fontSize="md" color="#2D1F17" lineClamp={1}
+                    <Text fontWeight="600" fontSize="lg" color="#2D1F17" lineClamp={1}
                       style={{ fontFamily: "'Nunito', sans-serif" }}
                       _groupHover={{ color: '#7D4F3A' }} transition="color 0.15s">
                       {recipe.name}
                     </Text>
                     {(recipe.description || recipe.albumName) && (
-                      <Text fontSize="xs" color="#B08A72" lineClamp={1} mt={0.5}>
+                      <Text fontSize="sm" color="#B08A72" lineClamp={1} mt={0.5}>
                         {recipe.albumName && <span>{recipe.albumName}</span>}
                         {recipe.albumName && recipe.description && <span> · </span>}
                         {recipe.description && <span>{recipe.description}</span>}
                       </Text>
                     )}
                   </Box>
-                  <Text fontSize="sm" color="#D4B8A8" flexShrink={0}
-                    _groupHover={{ color: '#A0785A' }} transition="color 0.15s">
+                  <Text fontSize="md" color="#A0785A" flexShrink={0}
+                    _groupHover={{ color: '#7D4020' }} transition="color 0.15s">
                     ←
                   </Text>
                 </Box>
@@ -318,6 +323,7 @@ export default function HomePage() {
           </Box>
         </Box>
       )}
+
     </div>
   );
 }
