@@ -416,28 +416,24 @@ RecipeBox/
 
 <div align="center">
 
-> 📸 **Add your screenshots here** — replace the placeholder rows with actual image links
-
-<br/>
-
 | 🏠 Homepage | 📁 Album View |
 |:---:|:---:|
 | _Browse all recipes with live search_ | _Recipes organized by category_ |
-| <img src="docs/screenshots/home.png" width="400"/> | <img src="docs/screenshots/albums.png" width="400"/> |
+| ![Homepage](docs/screenshots/home.png) | ![Album View](docs/screenshots/albums.png) |
 
 <br/>
 
 | 📖 Recipe Detail | ➕ Add Recipe |
 |:---:|:---:|
 | _Full recipe with photo, ingredients & steps_ | _Image upload form with rich fields_ |
-| <img src="docs/screenshots/recipe.png" width="400"/> | <img src="docs/screenshots/add-recipe.png" width="400"/> |
+| ![Recipe Detail](docs/screenshots/recipe.png) | ![Add Recipe](docs/screenshots/add-recipe.png) |
 
 <br/>
 
 | 🤖 AI Finder | 🛡️ Admin Dashboard |
 |:---:|:---:|
 | _Enter ingredients → AI generates recipes_ | _Manage users, albums, and statistics_ |
-| <img src="docs/screenshots/ai1.png" width="400"/><br/> <img src="docs/screenshots/ai2.png" width="400"/> | <img src="docs/screenshots/admin.png" width="400"/> |
+| ![AI 1](docs/screenshots/ai1.png) ![AI 2](docs/screenshots/ai2.png) | ![Admin](docs/screenshots/admin.png) |
 
 </div>
 
