@@ -22,7 +22,7 @@ export default function AlbumPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [search, setSearch] = useState('');
-  const [sortBy, setSortBy] = useState<'date' | 'name'>('date');
+  const [sortBy, setSortBy] = useState<'default' | 'date' | 'name'>('default');
 
   useEffect(() => {
     if (!id) return;
@@ -52,9 +52,10 @@ export default function AlbumPage() {
     }
     if (sortBy === 'name') {
       list.sort((a, b) => a.name.localeCompare(b.name));
-    } else {
+    } else if (sortBy === 'date') {
       list.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     }
+    // 'default' → keep server order (own → favorites → rest)
     return list;
   }, [recipes, search, sortBy]);
 
@@ -109,10 +110,10 @@ export default function AlbumPage() {
         {isAuthenticated && (
           <Link to={`/recipes/new?albumId=${id}`}>
             <Button
-              bg="#E8919C"
+              bg="#C9848C"
               color="white"
               size="sm"
-              _hover={{ bg: '#C97080' }}
+              _hover={{ bg: '#9E6870' }}
               borderRadius="xl"
               fontWeight="700"
             >
@@ -126,7 +127,7 @@ export default function AlbumPage() {
         <Box flex={1}>
           <SearchBar value={search} onChange={setSearch} />
         </Box>
-        <SortSelect value={sortBy} onChange={setSortBy} />
+        <SortSelect value={sortBy} onChange={(v) => setSortBy(v)} />
       </HStack>
 
       {filtered.length === 0 ? (

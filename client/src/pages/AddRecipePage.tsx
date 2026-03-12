@@ -6,7 +6,7 @@ import { CreateRecipeRequest } from '../types';
 import { recipeService } from '../services/recipeService';
 import RecipeForm from '../components/recipes/RecipeForm';
 
-const PALETTE = ['#E8919C', '#F5C6CB', '#F5E1D0', '#C97080', '#FAF0E8', '#1A1A1A'];
+const PALETTE = ['#C9848C', '#F0C8CC', '#F5E1D0', '#9E6870', '#FAF0E8', '#1A1A1A'];
 
 export default function AddRecipePage() {
   const navigate = useNavigate();
@@ -60,7 +60,7 @@ export default function AddRecipePage() {
         <Heading
           size="xl"
           mb={3}
-          style={{ fontFamily: "'Nunito', sans-serif", color: '#C97080' }}
+          style={{ fontFamily: "'Nunito', sans-serif", color: '#9E6870' }}
         >
           המתכון נוסף בהצלחה!
         </Heading>
@@ -72,7 +72,7 @@ export default function AddRecipePage() {
               key={i}
               w="8px"
               h="8px"
-              bg="#E8919C"
+              bg="#C9848C"
               borderRadius="full"
               style={{ animation: `bounce 1.2s ease-in-out ${i * 0.2}s infinite` }}
             />

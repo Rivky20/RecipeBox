@@ -12,6 +12,7 @@ import RecipePage from './pages/RecipePage';
 import AddRecipePage from './pages/AddRecipePage';
 import EditRecipePage from './pages/EditRecipePage';
 import FavoritesPage from './pages/FavoritesPage';
+import AIPage from './pages/AIPage';
 
 import AdminAlbumsPage from './pages/admin/AdminAlbumsPage';
 import AdminRecipesPage from './pages/admin/AdminRecipesPage';
@@ -45,6 +46,7 @@ function App() {
 
               {/* Public pages */}
               <Route path="/" element={<Layout><HomePage /></Layout>} />
+              <Route path="/ai" element={<Layout><AIPage /></Layout>} />
               <Route path="/albums/:id" element={<Layout><AlbumPage /></Layout>} />
               <Route path="/recipes/:id" element={<Layout><RecipePage /></Layout>} />
 

@@ -13,6 +13,7 @@ import Spinner from '../components/common/Spinner';
 import ErrorMessage from '../components/common/ErrorMessage';
 import ConfirmDialog from '../components/common/ConfirmDialog';
 import { FaDownload, FaEdit, FaTrash, FaShareAlt, FaCheck, FaArrowRight } from 'react-icons/fa';
+import { convertUnits, multiplyRecipe } from '../services/geminiService';
 
 export default function RecipePage() {
   const { id } = useParams<{ id: string }>();
@@ -27,12 +28,19 @@ export default function RecipePage() {
   const [deleting, setDeleting] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [displayIngredients, setDisplayIngredients] = useState('');
+  const [displayInstructions, setDisplayInstructions] = useState('');
+  const [aiLoading, setAiLoading] = useState<string | null>(null);
+  const [multiplier, setMultiplier] = useState(2);
+  const [isModified, setIsModified] = useState(false);
 
   useEffect(() => {
     if (!id) return;
     recipeService.getRecipe(Number(id))
       .then((r) => {
         setRecipe(r);
+        setDisplayIngredients(r.ingredients ?? '');
+        setDisplayInstructions(r.instructions ?? '');
         return albumService.getAlbum(r.albumId);
       })
       .then(setAlbum)
@@ -80,6 +88,66 @@ export default function RecipePage() {
     window.print();
   };
 
+  const handleConvert = async (to: 'cups' | 'grams') => {
+    if (!displayIngredients.trim()) return;
+    setAiLoading(`convert_${to}`);
+    try {
+      setDisplayIngredients(await convertUnits(displayIngredients, to));
+      setIsModified(true);
+    } catch { /* silent */ }
+    setAiLoading(null);
+  };
+
+  const handleMultiply = async () => {
+    if (!displayIngredients.trim()) return;
+    setAiLoading('multiply');
+    try {
+      const res = await multiplyRecipe(displayIngredients, displayInstructions, multiplier);
+      setDisplayIngredients(res.ingredients);
+      setDisplayInstructions(res.instructions);
+      setIsModified(true);
+    } catch { /* silent */ }
+    setAiLoading(null);
+  };
+
+  const handleReset = () => {
+    setDisplayIngredients(recipe?.ingredients ?? '');
+    setDisplayInstructions(recipe?.instructions ?? '');
+    setIsModified(false);
+    setMultiplier(2);
+  };
+
+  const AIPillBtn = ({
+    label, loadingKey, onClick, disabled,
+  }: { label: string; loadingKey: string; onClick: () => void; disabled?: boolean }) => {
+    const isLoading = aiLoading === loadingKey;
+    return (
+      <button
+        onClick={onClick}
+        disabled={isLoading || !!disabled || !!aiLoading}
+        style={{
+          padding: '4px 11px',
+          borderRadius: '20px',
+          border: '1.5px solid #E8C5C9',
+          background: isLoading ? '#F5E6E8' : 'white',
+          color: '#9E6870',
+          fontSize: '12px',
+          fontWeight: 600,
+          cursor: (isLoading || disabled || aiLoading) ? 'not-allowed' : 'pointer',
+          opacity: (disabled && !isLoading) ? 0.45 : 1,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px',
+          whiteSpace: 'nowrap',
+          transition: 'all 0.15s',
+          fontFamily: "'Nunito', sans-serif",
+        }}
+      >
+        {isLoading ? '⏳' : '✨'} {label}
+      </button>
+    );
+  };
+
   if (loading) return <Spinner />;
   if (error) return <ErrorMessage message={error} />;
   if (!recipe) return null;
@@ -93,7 +161,7 @@ export default function RecipePage() {
           {' › '}
           <Link
             to={`/albums/${recipe.albumId}`}
-            style={{ color: '#C97080', fontWeight: 600 }}
+            style={{ color: '#9E6870', fontWeight: 600 }}
           >
             {recipe.albumName || 'אלבום'}
           </Link>
@@ -142,6 +210,8 @@ export default function RecipePage() {
           </HStack>
           <Text color="gray.500" fontSize="sm">
             נוסף ב‑{new Date(recipe.createdAt).toLocaleDateString('he-IL')}
+            {' · '}
+            {isOwner ? 'אני' : (recipe.userName || recipe.userEmail?.split('@')[0] || '')}
           </Text>
         </Box>
 
@@ -154,9 +224,9 @@ export default function RecipePage() {
           <Button
             size="sm"
             variant="outline"
-            borderColor={copied ? '#4CAF50' : '#E8919C'}
-            color={copied ? '#4CAF50' : '#C97080'}
-            _hover={{ bg: copied ? '#F0FFF0' : '#FCE8EA' }}
+            borderColor={copied ? '#4CAF50' : '#C9848C'}
+            color={copied ? '#4CAF50' : '#9E6870'}
+            _hover={{ bg: copied ? '#F0FFF0' : '#F5E6E8' }}
             onClick={handleCopyLink}
           >
             {copied ? <FaCheck /> : <FaShareAlt />} {copied ? 'הועתק!' : 'שתף'}
@@ -164,9 +234,9 @@ export default function RecipePage() {
           <Button
             size="sm"
             variant="outline"
-            borderColor="#E8919C"
-            color="#C97080"
-            _hover={{ bg: '#FCE8EA' }}
+            borderColor="#C9848C"
+            color="#9E6870"
+            _hover={{ bg: '#F5E6E8' }}
             onClick={handleDownloadPdf}
             title={!isAuthenticated ? 'התחבר כדי להוריד' : 'הורד PDF'}
           >
@@ -215,9 +285,9 @@ export default function RecipePage() {
           <a href={recipe.link!} target="_blank" rel="noopener noreferrer">
             <Button
               variant="outline"
-              borderColor="#E8919C"
-              color="#C97080"
-              _hover={{ bg: '#FCE8EA' }}
+              borderColor="#C9848C"
+              color="#9E6870"
+              _hover={{ bg: '#F5E6E8' }}
             >
               פתח מתכון ←
             </Button>
@@ -247,48 +317,83 @@ export default function RecipePage() {
 
           {/* Ingredients + Instructions */}
           <Box flex={1} minW="280px">
+            {/* AI Toolbar */}
+            <Box
+              bg="#FFFAF7"
+              border="1.5px solid #F0DDD0"
+              borderRadius="xl"
+              px={4}
+              py={2}
+              mb={4}
+            >
+              <HStack gap={2} flexWrap="wrap" justify="space-between" align="center">
+                <HStack gap={2} flexWrap="wrap">
+                  <AIPillBtn label="המר לכוסות" loadingKey="convert_cups" onClick={() => handleConvert('cups')} />
+                  <AIPillBtn label="המר לגרמים" loadingKey="convert_grams" onClick={() => handleConvert('grams')} />
+                </HStack>
+                <HStack gap={1} align="center">
+                  <Text fontSize="xs" color="#9E6870" fontWeight={600}>כפל מתכון:</Text>
+                  <button
+                    onClick={() => setMultiplier(m => Math.max(1, m - 1))}
+                    style={{
+                      width: '24px', height: '24px', borderRadius: '50%',
+                      border: '1.5px solid #E8C5C9', background: 'white',
+                      color: '#9E6870', fontWeight: 700, fontSize: '14px',
+                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >−</button>
+                  <Text fontSize="sm" fontWeight={700} color="#7D6B62" minW="28px" textAlign="center">×{multiplier}</Text>
+                  <button
+                    onClick={() => setMultiplier(m => Math.min(10, m + 1))}
+                    style={{
+                      width: '24px', height: '24px', borderRadius: '50%',
+                      border: '1.5px solid #E8C5C9', background: 'white',
+                      color: '#9E6870', fontWeight: 700, fontSize: '14px',
+                      cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}
+                  >+</button>
+                  <AIPillBtn label="הכפל" loadingKey="multiply" onClick={handleMultiply} />
+                  {isModified && (
+                    <button
+                      onClick={handleReset}
+                      title="חזור למקור"
+                      style={{
+                        padding: '4px 10px', borderRadius: '20px',
+                        border: '1.5px solid #F0DDD0', background: 'white',
+                        color: '#BBAAA0', fontSize: '12px', fontWeight: 600,
+                        cursor: 'pointer', whiteSpace: 'nowrap',
+                        fontFamily: "'Nunito', sans-serif",
+                      }}
+                    >
+                      ↩ איפוס
+                    </button>
+                  )}
+                </HStack>
+              </HStack>
+            </Box>
+
             <HStack align="flex-start" gap={6} wrap="wrap">
               <Box flex={1} minW="200px">
-                <Heading size="md" mb={3}
-                  style={{ fontFamily: "'Nunito', sans-serif" }}
-                >
-                  מצרכים
-                </Heading>
+                <Heading size="md" mb={3} style={{ fontFamily: "'Nunito', sans-serif" }}>מצרכים</Heading>
                 <Box
-                  as="pre"
-                  whiteSpace="pre-wrap"
+                  as="pre" whiteSpace="pre-wrap"
                   style={{ fontFamily: "'Nunito', sans-serif" }}
-                  bg="#FFF8F4"
-                  border="1px solid"
-                  borderColor="#F0DDD0"
-                  p={4}
-                  borderRadius="xl"
-                  fontSize="sm"
-                  color="#4A3728"
+                  bg="#FFF8F4" border="1px solid" borderColor="#F0DDD0"
+                  p={4} borderRadius="xl" fontSize="sm" color="#4A3728"
                 >
-                  {recipe.ingredients}
+                  {displayIngredients}
                 </Box>
               </Box>
 
               <Box flex={2} minW="250px">
-                <Heading size="md" mb={3}
-                  style={{ fontFamily: "'Nunito', sans-serif" }}
-                >
-                  הוראות הכנה
-                </Heading>
+                <Heading size="md" mb={3} style={{ fontFamily: "'Nunito', sans-serif" }}>הוראות הכנה</Heading>
                 <Box
-                  as="pre"
-                  whiteSpace="pre-wrap"
+                  as="pre" whiteSpace="pre-wrap"
                   style={{ fontFamily: "'Nunito', sans-serif" }}
-                  bg="#FFF8F4"
-                  border="1px solid"
-                  borderColor="#F0DDD0"
-                  p={4}
-                  borderRadius="xl"
-                  fontSize="sm"
-                  color="#4A3728"
+                  bg="#FFF8F4" border="1px solid" borderColor="#F0DDD0"
+                  p={4} borderRadius="xl" fontSize="sm" color="#4A3728"
                 >
-                  {recipe.instructions}
+                  {displayInstructions}
                 </Box>
               </Box>
             </HStack>

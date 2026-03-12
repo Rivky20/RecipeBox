@@ -6,7 +6,10 @@ import {
 import { Album, CreateRecipeRequest, Recipe, RecipeType } from '../../types';
 import { albumService } from '../../services/albumService';
 import { imageService } from '../../services/imageService';
-import { FaCloudUploadAlt } from 'react-icons/fa';
+import { FaCloudUploadAlt, FaMicrophone, FaStop } from 'react-icons/fa';
+import { improveText, suggestNameAndDescription } from '../../services/geminiService';
+
+type RecordingField = 'ingredients' | 'instructions' | null;
 
 interface Props {
   initial?: Recipe;
@@ -33,6 +36,12 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
   const [loading, setLoading] = useState(false);
   const [apiError, setApiError] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [recordingField, setRecordingField] = useState<RecordingField>(null);
+  const [interimText, setInterimText] = useState('');
+  const recognitionRef = useRef<any>(null);
+  const [aiLoading, setAiLoading] = useState<string | null>(null);
+  const [undoIngredients, setUndoIngredients] = useState<string | null>(null);
+  const [undoInstructions, setUndoInstructions] = useState<string | null>(null);
 
   useEffect(() => {
     albumService.getAlbums().then(setAlbums);
@@ -43,6 +52,157 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
     if (!file) return;
     setImageFile(file);
     setImagePreview(URL.createObjectURL(file));
+  };
+
+  const startRecording = (field: 'ingredients' | 'instructions') => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('הדפדפן שלך אינו תומך בזיהוי קול. נסה Chrome.');
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'he-IL';
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognitionRef.current = recognition;
+    setRecordingField(field);
+    setInterimText('');
+
+    recognition.onresult = (event: any) => {
+      let interim = '';
+      let final = '';
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          final += transcript + ' ';
+        } else {
+          interim += transcript;
+        }
+      }
+      setInterimText(interim);
+      if (final) {
+        if (field === 'ingredients') {
+          setIngredients(prev => prev + (prev.trim() ? '\n' : '') + final.trim());
+        } else {
+          setInstructions(prev => prev + (prev.trim() ? '\n' : '') + final.trim());
+        }
+      }
+    };
+
+    recognition.onend = () => {
+      setRecordingField(null);
+      setInterimText('');
+    };
+
+    recognition.onerror = () => {
+      setRecordingField(null);
+      setInterimText('');
+    };
+
+    recognition.start();
+  };
+
+  const stopRecording = () => {
+    recognitionRef.current?.stop();
+    setRecordingField(null);
+    setInterimText('');
+  };
+
+  const MicButton = ({ field }: { field: 'ingredients' | 'instructions' }) => {
+    const isRecording = recordingField === field;
+    return (
+      <button
+        type="button"
+        onClick={() => isRecording ? stopRecording() : startRecording(field)}
+        title={isRecording ? 'עצור הקלטה' : 'הקלט קול'}
+        style={{
+          background: isRecording ? '#E53E3E' : '#F5E6E8',
+          border: `2px solid ${isRecording ? '#C53030' : '#C9848C'}`,
+          borderRadius: '50%',
+          width: '34px',
+          height: '34px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          color: isRecording ? 'white' : '#9E6870',
+          flexShrink: 0,
+          animation: isRecording ? 'pulse 1.2s infinite' : 'none',
+        }}
+      >
+        {isRecording ? <FaStop size={13} /> : <FaMicrophone size={14} />}
+      </button>
+    );
+  };
+
+  const handleImprove = async (field: 'ingredients' | 'instructions') => {
+    const text = field === 'ingredients' ? ingredients : instructions;
+    if (!text.trim()) return;
+    setAiLoading(`improve_${field}`);
+    try {
+      const improved = await improveText(text, field);
+      if (field === 'ingredients') {
+        setUndoIngredients(text);
+        setIngredients(improved);
+      } else {
+        setUndoInstructions(text);
+        setInstructions(improved);
+      }
+    } catch { /* silent */ }
+    setAiLoading(null);
+  };
+
+  const handleUndoImprove = (field: 'ingredients' | 'instructions') => {
+    if (field === 'ingredients' && undoIngredients !== null) {
+      setIngredients(undoIngredients);
+      setUndoIngredients(null);
+    } else if (field === 'instructions' && undoInstructions !== null) {
+      setInstructions(undoInstructions);
+      setUndoInstructions(null);
+    }
+  };
+
+  const handleSuggest = async () => {
+    if (!ingredients.trim()) return;
+    setAiLoading('suggest');
+    try {
+      const { name: n, description: d } = await suggestNameAndDescription(ingredients);
+      setName(n);
+      setDescription(d);
+    } catch { /* silent */ }
+    setAiLoading(null);
+  };
+
+  const AIPillBtn = ({
+    label, loadingKey, onClick, disabled,
+  }: { label: string; loadingKey: string; onClick: () => void; disabled?: boolean }) => {
+    const isLoading = aiLoading === loadingKey;
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={isLoading || !!disabled || !!aiLoading}
+        style={{
+          padding: '4px 11px',
+          borderRadius: '20px',
+          border: '1.5px solid #E8C5C9',
+          background: isLoading ? '#F5E6E8' : 'white',
+          color: '#9E6870',
+          fontSize: '12px',
+          fontWeight: 600,
+          cursor: (isLoading || disabled || aiLoading) ? 'not-allowed' : 'pointer',
+          opacity: (disabled && !isLoading) ? 0.45 : 1,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '4px',
+          whiteSpace: 'nowrap',
+          transition: 'all 0.15s',
+          fontFamily: "'Nunito', sans-serif",
+        }}
+      >
+        {isLoading ? '⏳' : '✨'} {label}
+      </button>
+    );
   };
 
   const validate = () => {
@@ -98,9 +258,9 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
     return {
       padding: '8px 22px',
       borderRadius: '12px',
-      border: `2px solid ${isActive ? '#E8919C' : '#F0DDD0'}`,
-      background: isActive ? '#FCE8EA' : 'white',
-      color: isActive ? '#C97080' : '#7D6B62',
+      border: `2px solid ${isActive ? '#C9848C' : '#F0DDD0'}`,
+      background: isActive ? '#F5E6E8' : 'white',
+      color: isActive ? '#9E6870' : '#7D6B62',
       fontWeight: isActive ? 700 : 400,
       cursor: 'pointer',
       transition: 'all 0.15s',
@@ -174,27 +334,77 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
         {recipeType === 'Text' && (
           <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={4} alignItems="flex-start">
             <Field.Root invalid={!!errors.ingredients}>
-              <Field.Label>מרכיבים *</Field.Label>
+              <HStack justify="space-between" align="center">
+                <Field.Label mb={0}>מרכיבים *</Field.Label>
+                <HStack gap={1}>
+                  <AIPillBtn label="שפר" loadingKey="improve_ingredients" onClick={() => handleImprove('ingredients')} disabled={!ingredients.trim()} />
+                  {undoIngredients !== null && (
+                    <button type="button" onClick={() => handleUndoImprove('ingredients')} title="בטל שיפור" style={{ padding: '4px 9px', borderRadius: '20px', border: '1.5px solid #F0DDD0', background: 'white', color: '#BBAAA0', fontSize: '12px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: "'Nunito', sans-serif" }}>↩ ביטול</button>
+                  )}
+                  <MicButton field="ingredients" />
+                </HStack>
+              </HStack>
               <Textarea
                 value={ingredients}
                 onChange={(e) => setIngredients(e.target.value)}
                 placeholder="רשום מרכיב אחד בכל שורה..."
                 rows={7}
+                borderColor={recordingField === 'ingredients' ? '#E53E3E' : undefined}
+                _focus={{ borderColor: recordingField === 'ingredients' ? '#E53E3E' : '#C9848C' }}
               />
+              {recordingField === 'ingredients' && interimText && (
+                <Text fontSize="xs" color="#E53E3E" mt={1} fontStyle="italic">
+                  🎤 {interimText}
+                </Text>
+              )}
+              {recordingField === 'ingredients' && !interimText && (
+                <Text fontSize="xs" color="#E53E3E" mt={1}>🎤 מקשיב...</Text>
+              )}
               {errors.ingredients && <Field.ErrorText>{errors.ingredients}</Field.ErrorText>}
             </Field.Root>
 
             <Field.Root invalid={!!errors.instructions}>
-              <Field.Label>הוראות הכנה *</Field.Label>
+              <HStack justify="space-between" align="center">
+                <Field.Label mb={0}>הוראות הכנה *</Field.Label>
+                <HStack gap={1}>
+                  <AIPillBtn label="שפר" loadingKey="improve_instructions" onClick={() => handleImprove('instructions')} disabled={!instructions.trim()} />
+                  {undoInstructions !== null && (
+                    <button type="button" onClick={() => handleUndoImprove('instructions')} title="בטל שיפור" style={{ padding: '4px 9px', borderRadius: '20px', border: '1.5px solid #F0DDD0', background: 'white', color: '#BBAAA0', fontSize: '12px', fontWeight: 600, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: "'Nunito', sans-serif" }}>↩ ביטול</button>
+                  )}
+                  <MicButton field="instructions" />
+                </HStack>
+              </HStack>
               <Textarea
                 value={instructions}
                 onChange={(e) => setInstructions(e.target.value)}
                 placeholder="הוראות שלב אחר שלב..."
                 rows={7}
+                borderColor={recordingField === 'instructions' ? '#E53E3E' : undefined}
+                _focus={{ borderColor: recordingField === 'instructions' ? '#E53E3E' : '#C9848C' }}
               />
+              {recordingField === 'instructions' && interimText && (
+                <Text fontSize="xs" color="#E53E3E" mt={1} fontStyle="italic">
+                  🎤 {interimText}
+                </Text>
+              )}
+              {recordingField === 'instructions' && !interimText && (
+                <Text fontSize="xs" color="#E53E3E" mt={1}>🎤 מקשיב...</Text>
+              )}
               {errors.instructions && <Field.ErrorText>{errors.instructions}</Field.ErrorText>}
             </Field.Root>
           </Grid>
+        )}
+
+        {/* AI Toolbar — suggest name/description */}
+        {recipeType === 'Text' && (
+          <HStack justify="flex-end">
+            <AIPillBtn
+              label="הצע שם ותיאור לפי המרכיבים"
+              loadingKey="suggest"
+              onClick={handleSuggest}
+              disabled={!ingredients.trim()}
+            />
+          </HStack>
         )}
 
         {/* Image */}
@@ -241,13 +451,13 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
                   />
                   <Box
                     border="2px dashed"
-                    borderColor={imagePreview ? '#E8919C' : '#F0DDD0'}
+                    borderColor={imagePreview ? '#C9848C' : '#F0DDD0'}
                     borderRadius="xl"
                     p={4}
                     textAlign="center"
                     cursor="pointer"
                     bg={imagePreview ? '#FFFAF7' : 'white'}
-                    _hover={{ borderColor: '#E8919C', bg: '#FFFAF7' }}
+                    _hover={{ borderColor: '#C9848C', bg: '#FFFAF7' }}
                     transition="all 0.15s"
                     onClick={() => fileInputRef.current?.click()}
                   >
@@ -277,9 +487,9 @@ export default function RecipeForm({ initial, initialAlbumId, onSubmit, submitLa
         <Button
           type="submit"
           size="lg"
-          bg="#E8919C"
+          bg="#C9848C"
           color="white"
-          _hover={{ bg: '#C97080' }}
+          _hover={{ bg: '#9E6870' }}
           borderRadius="xl"
           fontWeight="700"
           loading={loading || uploading}

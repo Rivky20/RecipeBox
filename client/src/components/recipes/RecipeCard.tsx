@@ -59,7 +59,7 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
         </Link>
       ) : (
         /* Top accent stripe when no image */
-        <Box h="4px" bg="linear-gradient(90deg, #E8919C, #F5C6CB, #F5E1D0)" />
+        <Box h="4px" bg="linear-gradient(90deg, #C9848C, #F0C8CC, #F5E1D0)" />
       )}
 
       <Box p={5} flex={1} display="flex" flexDirection="column" gap={3}>
@@ -69,12 +69,12 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             flexShrink={0}
             w="36px"
             h="36px"
-            bg="#FCE8EA"
+            bg="#F5E6E8"
             borderRadius="lg"
             display="flex"
             alignItems="center"
             justifyContent="center"
-            color="#E8919C"
+            color="#C9848C"
             fontSize="md"
           >
             <FaBookOpen />
@@ -118,8 +118,8 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             display="inline-flex"
             alignSelf="flex-start"
             alignItems="center"
-            bg={isOwner ? '#FCE8EA' : '#F5E1D0'}
-            color={isOwner ? '#C97080' : '#7D6B62'}
+            bg={isOwner ? '#F5E6E8' : '#F5E1D0'}
+            color={isOwner ? '#9E6870' : '#7D6B62'}
             fontSize="xs"
             fontWeight="600"
             px={2}
@@ -138,9 +138,9 @@ export default function RecipeCard({ recipe, onFavoriteToggle }: Props) {
             size="sm"
             width="full"
             variant="outline"
-            borderColor="#E8919C"
-            color="#C97080"
-            _hover={{ bg: '#FCE8EA' }}
+            borderColor="#C9848C"
+            color="#9E6870"
+            _hover={{ bg: '#F5E6E8' }}
             borderRadius="xl"
             fontWeight="600"
             style={{ fontFamily: "'Nunito', sans-serif" }}

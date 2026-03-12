@@ -32,7 +32,7 @@ export default function Footer() {
         {/* Left — Logo + links */}
         <Box>
           <HStack gap={2} mb={3}>
-            <Box color="#E8919C" fontSize="lg"><FaBook /></Box>
+            <Box color="#C9848C" fontSize="lg"><FaBook /></Box>
             <Text
               fontWeight="700"
               fontSize="md"
@@ -45,19 +45,19 @@ export default function Footer() {
 
           <HStack gap={5} wrap="wrap">
             <Link to="/" style={LINK_STYLE}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C97080')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#9E6870')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#7D6B62')}
             >
               Home
             </Link>
             <Link to="/favorites" style={LINK_STYLE}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C97080')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#9E6870')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#7D6B62')}
             >
               Favorites
             </Link>
             <Link to="/recipes/new" style={LINK_STYLE}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C97080')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#9E6870')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#7D6B62')}
             >
               Add Recipe
@@ -81,7 +81,7 @@ export default function Footer() {
             <Text fontSize="xs" color="#7D6B62">
               © 2025 RecipeBox. All rights reserved.
             </Text>
-            <Box color="#E8919C" fontSize="xs"><FaHeart /></Box>
+            <Box color="#C9848C" fontSize="xs"><FaHeart /></Box>
           </HStack>
         </Box>
       </Flex>
