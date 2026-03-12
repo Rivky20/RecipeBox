@@ -241,7 +241,6 @@ export default function HomePage() {
           <Heading size="2xl" mb={1} color="#7D4020" style={{ fontFamily: "'Nunito', sans-serif" }}>
             אלבומי מתכונים
           </Heading>
-          <Text color="#7D6B62">עיין באוסף קטגוריות המתכונים שלנו</Text>
         </div>
         <HStack gap={3}>
           <NativeSelect.Root size="sm" minW="130px">
