@@ -7,8 +7,7 @@ import { albumService } from '../../services/albumService';
 import { imageService } from '../../services/imageService';
 import Spinner from '../../components/common/Spinner';
 import ErrorMessage from '../../components/common/ErrorMessage';
-import ConfirmDialog from '../../components/common/ConfirmDialog';
-import { FaEdit, FaTrash, FaPlus } from 'react-icons/fa';
+import { FaEdit, FaPlus } from 'react-icons/fa';
 
 export default function AdminAlbumsPage() {
   const [albums, setAlbums] = useState<Album[]>([]);
@@ -25,10 +24,6 @@ export default function AdminAlbumsPage() {
   const [saving, setSaving] = useState(false);
   const [formError, setFormError] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // Delete
-  const [deleteTarget, setDeleteTarget] = useState<Album | null>(null);
-  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => { load(); }, []);
 
@@ -73,20 +68,6 @@ export default function AdminAlbumsPage() {
       setFormError('שמירת האלבום נכשלה.');
     } finally {
       setSaving(false);
-    }
-  };
-
-  const handleDelete = async () => {
-    if (!deleteTarget) return;
-    setDeleting(true);
-    try {
-      await albumService.deleteAlbum(deleteTarget.id);
-      setAlbums((prev) => prev.filter((a) => a.id !== deleteTarget.id));
-      setDeleteTarget(null);
-    } catch {
-      setError('מחיקת האלבום נכשלה.');
-    } finally {
-      setDeleting(false);
     }
   };
 
@@ -199,9 +180,6 @@ export default function AdminAlbumsPage() {
                     <Button size="xs" variant="outline" colorPalette="blue" onClick={() => openEdit(album)}>
                       <FaEdit />
                     </Button>
-                    <Button size="xs" colorPalette="red" onClick={() => setDeleteTarget(album)}>
-                      <FaTrash />
-                    </Button>
                   </HStack>
                 </Table.Cell>
               </Table.Row>
@@ -210,15 +188,6 @@ export default function AdminAlbumsPage() {
         </Table.Root>
       </Box>
 
-      <ConfirmDialog
-        open={!!deleteTarget}
-        title="מחיקת אלבום"
-        message={`למחוק את "${deleteTarget?.name}"? כל המתכונים בו יושפעו.`}
-        confirmLabel="מחק"
-        onConfirm={handleDelete}
-        onCancel={() => setDeleteTarget(null)}
-        loading={deleting}
-      />
     </div>
   );
 }

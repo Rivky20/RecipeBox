@@ -48,12 +48,4 @@ public class AlbumsController : ControllerBase
         return Ok(album);
     }
 
-    [HttpDelete("{id:int}")]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> Delete(int id)
-    {
-        var deleted = await _albumService.DeleteAsync(id);
-        if (!deleted) return NotFound();
-        return NoContent();
-    }
 }

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python append_sections.py)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\user1\\\\Desktop\\\\RecipeBoxפרוייקט\\\\RecipeBox\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(python docs/project-book/add_section12_final.py)",
+      "Bash(python docs/project-book/finalize_document.py)"
+    ]
+  }
+}

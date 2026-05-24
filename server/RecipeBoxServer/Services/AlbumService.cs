@@ -95,13 +95,4 @@ public class AlbumService : IAlbumService
         };
     }
 
-    public async Task<bool> DeleteAsync(int id)
-    {
-        var album = await _db.Albums.FindAsync(id);
-        if (album == null) return false;
-
-        _db.Albums.Remove(album);
-        await _db.SaveChangesAsync();
-        return true;
-    }
 }

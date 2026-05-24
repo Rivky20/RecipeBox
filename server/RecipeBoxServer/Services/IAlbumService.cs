@@ -8,5 +8,4 @@ public interface IAlbumService
     Task<AlbumDto?> GetByIdAsync(int id);
     Task<AlbumDto> CreateAsync(CreateAlbumDto dto);
     Task<AlbumDto?> UpdateAsync(int id, UpdateAlbumDto dto);
-    Task<bool> DeleteAsync(int id);
 }

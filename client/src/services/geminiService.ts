@@ -1,7 +1,6 @@
 import { Recipe } from '../types';
 
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
-const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const AI_URL = `${import.meta.env.VITE_API_URL}/api/ai/chat`;
 
 export interface FoundRecipe {
   id: number;
@@ -75,14 +74,11 @@ ${JSON.stringify(recipesForAI, null, 2)}
 אם לא נמצא כלום, החזר found כמערך ריק וצור מתכון ב-generated.
 `;
 
-  const response = await fetch(GROQ_URL, {
+  const response = await fetch(AI_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${GROQ_API_KEY}`,
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'llama-3.3-70b-versatile',
+      model: 'gemini-2.0-flash',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.3,
     }),
@@ -90,22 +86,25 @@ ${JSON.stringify(recipesForAI, null, 2)}
 
   if (!response.ok) {
     const errBody = await response.json().catch(() => ({}));
-    console.error('Groq error body:', JSON.stringify(errBody, null, 2));
+    console.error('Google AI error body:', JSON.stringify(errBody, null, 2));
     throw new Error(`API error ${response.status}: ${errBody?.error?.message || 'unknown'}`);
   }
 
   const data = await response.json();
-  const text = data.choices[0].message.content;
+  const errorData = Array.isArray(data) ? data[0]?.error : data?.error;
+  if (errorData?.code === 429) throw new Error('שירות ה-AI עמוס כרגע, נסה שוב בעוד מספר שניות.');
+  const text = data.choices?.[0]?.message?.content;
+  if (!text) throw new Error('תגובה לא צפויה מה-AI, נסה שוב.');
   const clean = text.replace(/```json|```/g, '').trim();
   return JSON.parse(clean);
 }
 
-async function groqChat(prompt: string): Promise<string> {
-  const response = await fetch(GROQ_URL, {
+async function googleAIChat(prompt: string): Promise<string> {
+  const response = await fetch(AI_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GROQ_API_KEY}` },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'llama-3.3-70b-versatile',
+      model: 'gemini-2.0-flash',
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.3,
     }),
@@ -119,12 +118,12 @@ export async function improveText(text: string, type: 'ingredients' | 'instructi
   const prompt = type === 'ingredients'
     ? `תקן ושפר את רשימת המרכיבים הבאה. הוסף כמויות אם חסרות, כל מרכיב בשורה נפרדת, ניסוח נקי ומסודר. החזר רק את הרשימה המתוקנת:\n${text}`
     : `תקן ושפר את הוראות ההכנה הבאות. מספר כל שלב, הבהר וארגן בצורה ברורה. החזר רק את ההוראות המתוקנות:\n${text}`;
-  return groqChat(prompt);
+  return googleAIChat(prompt);
 }
 
 export async function suggestNameAndDescription(ingredients: string): Promise<{ name: string; description: string }> {
   const prompt = `בהתבסס על המרכיבים הבאים, הצע שם יפה ותיאור קצר (משפט אחד) למתכון בעברית. החזר JSON בלבד ללא הסברים נוספים:\n{"name":"...","description":"..."}\n\nמרכיבים:\n${ingredients}`;
-  const text = await groqChat(prompt);
+  const text = await googleAIChat(prompt);
   const clean = text.replace(/```json|```/g, '').trim();
   const match = clean.match(/\{[\s\S]*\}/);
   if (!match) throw new Error('Invalid AI response');
@@ -135,7 +134,7 @@ export async function convertUnits(ingredients: string, to: 'cups' | 'grams'): P
   const prompt = to === 'cups'
     ? `המר את כמויות הגרמים וק"ג לכוסות ומ"ל ברשימת המרכיבים הבאה. שמור על כל שאר הטקסט ללא שינוי. החזר רק את הרשימה המעודכנת:\n${ingredients}`
     : `המר את כמויות הכוסות ומ"ל לגרמים ברשימת המרכיבים הבאה. שמור על כל שאר הטקסט ללא שינוי. החזר רק את הרשימה המעודכנת:\n${ingredients}`;
-  return groqChat(prompt);
+  return googleAIChat(prompt);
 }
 
 export async function multiplyRecipe(
@@ -144,6 +143,6 @@ export async function multiplyRecipe(
   multiplier: number,
 ): Promise<{ ingredients: string; instructions: string }> {
   const prompt = `הכפל את כמויות המרכיבים ב-${multiplier}. עדכן גם הוראות הכנה אם יש בהן כמויות. החזר JSON בלבד:\n{"ingredients":"...","instructions":"..."}\n\nמרכיבים:\n${ingredients}\n\nהוראות:\n${instructions}`;
-  const text = await groqChat(prompt);
+  const text = await googleAIChat(prompt);
   return JSON.parse(text.replace(/```json|```/g, '').trim());
 }

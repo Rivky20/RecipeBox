@@ -13,7 +13,4 @@ export const albumService = {
 
   updateAlbum: (id: number, data: UpdateAlbumRequest) =>
     api.put<Album>(`/api/albums/${id}`, data).then((r) => r.data),
-
-  deleteAlbum: (id: number) =>
-    api.delete(`/api/albums/${id}`),
 };
