@@ -22,111 +22,27 @@ export interface AIResult {
   generated: GeneratedRecipe | null;
 }
 
-function stripQuantities(line: string): string {
-  return line
-    .toLowerCase()
-    .replace(/^\d+[\.\-\)]\s*/, '')
-    .replace(/\d+([\/+]\d+)?\s*/g, '')
-    .replace(/\b(כוס|כוסות|כף|כפות|כפית|כפיות|גרם|ק"ג|מ"ל|ליטר|יחידה|יחידות|חבילה|חבילת|פחית|קמצוץ|גדול|קטן|בינוני|מומס|קצוץ|פרוס|מגורר|טרי|יבש|שלם|מרוסק|מעורבב|מסונן|מבושל|אפוי)\b/gi, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function stemHebrew(word: string): string {
-  if (word.endsWith('ות')) return word.slice(0, -2);
-  if (word.endsWith('ים')) return word.slice(0, -2);
-  return word;
-}
-
-function ingredientMatches(recipeLine: string, userItem: string): boolean {
-  const lineStem = stemHebrew(recipeLine);
-  const uiStem = stemHebrew(userItem);
-  return (
-    recipeLine.includes(userItem) ||
-    userItem.includes(recipeLine) ||
-    lineStem.includes(uiStem) ||
-    uiStem.includes(lineStem)
-  );
-}
-
-function matchByIngredients(recipes: Recipe[], userInput: string): FoundRecipe[] {
-  const userItems = userInput
-    .split(/[,\n]+/)
-    .map(s => stripQuantities(s))
-    .filter(s => s.length > 1);
-
-  if (userItems.length === 0) return [];
-
-  const results: FoundRecipe[] = [];
-
-  for (const recipe of recipes) {
-    if (!recipe.ingredients) continue;
-
-    const recipeLines = recipe.ingredients
-      .split('\n')
-      .map(line => line.trim())
-      .filter(s => s.length > 1);
-
-    if (recipeLines.length === 0) continue;
-
-    const missing: string[] = [];
-    let anyMatch = false;
-
-    for (const line of recipeLines) {
-      const stripped = stripQuantities(line);
-      if (userItems.some(ui => ingredientMatches(stripped, ui))) {
-        anyMatch = true;
-      } else {
-        missing.push(line); // שומר שורה מקורית עם כמויות
-      }
-    }
-
-    if (anyMatch && missing.length <= 2) {
-      results.push({ id: recipe.id, name: recipe.name, missingIngredients: missing });
-    }
-  }
-
-  return results;
-}
-
-function matchByName(recipes: Recipe[], userInput: string): FoundRecipe[] {
-  const userWords = userInput.toLowerCase().trim().split(/\s+/).filter(w => w.length > 1);
-  if (userWords.length === 0) return [];
-
-  const wordMatch = (a: string, b: string) => a === b || stemHebrew(a) === stemHebrew(b);
-
-  return recipes
-    .filter(recipe => {
-      const nameWords = recipe.name.toLowerCase().trim().split(/\s+/).filter(w => w.length > 1);
-      if (nameWords.length === 0) return false;
-      const allNameInUser = nameWords.every(nw => userWords.some(uw => wordMatch(uw, nw)));
-      const allUserInName = userWords.every(uw => nameWords.some(nw => wordMatch(nw, uw)));
-      return allNameInUser || allUserInName;
-    })
-    .map(recipe => ({ id: recipe.id, name: recipe.name, missingIngredients: [] }));
-}
-
 export async function findRecipesWithAI(userIngredients: string, allRecipes: Recipe[]): Promise<AIResult> {
   const textRecipes = allRecipes.filter(r => r.recipeType === 'Text' && r.ingredients).slice(0, 50);
-  const allTextRecipes = allRecipes.filter(r => r.recipeType === 'Text');
 
-  const byIngredients = matchByIngredients(textRecipes, userIngredients);
-  const byName = matchByName(allTextRecipes, userIngredients);
+  const recipeList = textRecipes
+    .map(r => `ID:${r.id} | שם:${r.name} | מרכיבים:${r.ingredients}`)
+    .join('\n');
 
-  const seen = new Set<number>();
-  const matched = [...byIngredients, ...byName].filter(r => {
-    if (seen.has(r.id)) return false;
-    seen.add(r.id);
-    return true;
-  });
+  const prompt = `המשתמש רוצה לבשל עם: "${userIngredients}"
 
-  if (matched.length > 0) {
-    return { found: matched, generated: null };
-  }
+הנה רשימת המתכונים הקיימים:
+${recipeList}
 
-  const prompt = `צור מתכון חדש בעברית המשתמש בחומרים הבאים: "${userIngredients}"
+משימה: מצא מתכונים שניתן להכין עם החומרים הנ"ל. מותר עד 2 חומרים חסרים. התייחס למשמעות — "מים" זה מים, לא כל מילה שמכילה את האות מ. התחשב בצורות דקדוקיות (עגבנייה/עגבניות), מילים נרדפות וחומרים שהם אותו דבר.
 
-החזר JSON בלבד, ללא טקסט נוסף:
+אם מצאת מתכונים מתאימים, החזר:
+{
+  "found": [{ "id": <מספר>, "name": "<שם>", "missingIngredients": ["<חסר1>", "<חסר2>"] }],
+  "generated": null
+}
+
+אם לא מצאת מתכונים מתאימים, צור מתכון חדש בעברית עם החומרים הנ"ל והחזר:
 {
   "found": [],
   "generated": {
@@ -136,7 +52,9 @@ export async function findRecipesWithAI(userIngredients: string, allRecipes: Rec
     "instructions": "",
     "shoppingList": []
   }
-}`;
+}
+
+החזר JSON בלבד, ללא טקסט נוסף.`;
 
   const response = await fetch(AI_URL, {
     method: 'POST',
