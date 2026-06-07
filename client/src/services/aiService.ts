@@ -26,41 +26,41 @@ export async function findRecipesWithAI(userIngredients: string, allRecipes: Rec
   const textRecipes = allRecipes.filter(r => r.recipeType === 'Text' && r.ingredients).slice(0, 50);
 
   const recipeList = textRecipes
-    .map(r => `ID:${r.id} | שם:${r.name} | מרכיבים:${r.ingredients}`)
-    .join('\n');
+    .map(r => `ID:${r.id} | שם: ${r.name}\nמרכיבים: ${r.ingredients}`)
+    .join('\n---\n');
 
-  const prompt = `למשתמש יש את החומרים הבאים בלבד: "${userIngredients}"
-אין לו שום דבר אחר.
+  const prompt = `קלט מהמשתמש: "${userIngredients}"
 
-הנה רשימת המתכונים הקיימים:
+שלב 1 — קבע סוג קלט:
+האם הקלט הוא שם מתכון (כמו "עוגת שוקולד") או רשימת מרכיבים (כמו "ביצים, קמח, סוכר")?
+רשום: "סוג: שם" או "סוג: מרכיבים"
+
+שלב 2 — חפש ברשימת המתכונים:
+
+אם סוג: שם —
+  מצא מתכון ששמו תואם את הקלט, גם חלקית.
+  רשום: "נמצא: [שם] ID:[מספר]" או "לא נמצא"
+
+אם סוג: מרכיבים —
+  למשתמש יש בדיוק: "${userIngredients}" — לא יותר ולא פחות.
+  עבור על כל מתכון ורשום שורה:
+  [שם] | חסרים: [מרכיבים שאין למשתמש] | סה"כ: N
+  מתאים = N ≤ 2. התחשב בצורות דקדוקיות (ביצה/ביצים, עגבנייה/עגבניות).
+
+רשימת המתכונים:
 ${recipeList}
 
-משימה: בדוק כל מתכון — ספור כמה מרכיבים שלו אינם נמצאים ברשימת החומרים של המשתמש. מתכון מתאים רק אם חסרים לכל היותר 2 מרכיבים.
+שלב 3 — כתוב בדיוק: ===JSON===
+ואחריו JSON בלבד, ללא שום טקסט נוסף.
 
-דוגמה: אם למשתמש יש רק "מים" ולמתכון יש "שוקולד, שמנת, סוכר" — חסרים 3, לא מתאים.
-דוגמה: אם למשתמש יש "ביצים, קמח, סוכר" ולמתכון יש "ביצים, קמח, סוכר, חמאה" — חסר 1, מתאים.
+אם מצאת התאמה:
+{"found":[{"id":<מספר>,"name":"<שם>","missingIngredients":["<חסר1>","<חסר2>"]}],"generated":null}
 
-התחשב בצורות דקדוקיות (עגבנייה/עגבניות) ומילים נרדפות, אך אל תמציא חומרים שאינם ברשימה.
+אם לא מצאת — צור מתכון חדש בעברית:
+- קלט היה שם מתכון → השתמש בשם הזה בדיוק
+- קלט היה מרכיבים → המצא שם יצירתי
+{"found":[],"generated":{"name":"<שם>","description":"<תיאור קצר>","ingredients":"<מרכיבים, כל אחד בשורה>","instructions":"<הוראות ממוספרות>","shoppingList":["<פריט1>","<פריט2>"]}}`;
 
-אם מצאת מתכונים מתאימים, החזר:
-{
-  "found": [{ "id": <מספר>, "name": "<שם>", "missingIngredients": ["<חסר1>", "<חסר2>"] }],
-  "generated": null
-}
-
-אם לא מצאת מתכונים מתאימים, צור מתכון חדש בעברית המשתמש אך ורק בחומרים שיש למשתמש והחזר:
-{
-  "found": [],
-  "generated": {
-    "name": "",
-    "description": "",
-    "ingredients": "",
-    "instructions": "",
-    "shoppingList": []
-  }
-}
-
-החזר JSON בלבד, ללא טקסט נוסף.`;
 
   const response = await fetch(AI_URL, {
     method: 'POST',
@@ -86,7 +86,9 @@ ${recipeList}
   const data = await response.json();
   const text = data.choices?.[0]?.message?.content;
   if (!text) throw new Error('תגובה לא צפויה מה-AI, נסי שוב.');
-  const clean = text.replace(/```json|```/g, '').trim();
+  const delimIdx = text.indexOf('===JSON===');
+  const jsonStr = delimIdx !== -1 ? text.slice(delimIdx + 10) : text;
+  const clean = jsonStr.replace(/```json|```/g, '').trim();
   return JSON.parse(clean);
 }
 
