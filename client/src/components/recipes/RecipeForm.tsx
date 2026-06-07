@@ -7,7 +7,7 @@ import { Album, CreateRecipeRequest, Recipe, RecipeType } from '../../types';
 import { albumService } from '../../services/albumService';
 import { imageService } from '../../services/imageService';
 import { FaCloudUploadAlt, FaMicrophone, FaStop } from 'react-icons/fa';
-import { improveText, suggestNameAndDescription } from '../../services/geminiService';
+import { improveText, suggestNameAndDescription } from '../../services/aiService';
 
 type RecordingField = 'ingredients' | 'instructions' | null;
 

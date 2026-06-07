@@ -24,7 +24,6 @@ public class FavoriteService : IFavoriteService
         if (!recipeExists)
             throw new InvalidOperationException("Recipe not found.");
 
-        // מניעת כפילויות
         var alreadyFavorited = await _db.UserFavorites
             .AnyAsync(uf => uf.UserId == userId && uf.RecipeId == recipeId);
 

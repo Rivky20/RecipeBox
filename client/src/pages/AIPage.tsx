@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 import { useAuthModal } from '../context/AuthModalContext';
 import { recipeService } from '../services/recipeService';
 import { albumService } from '../services/albumService';
-import { findRecipesWithAI, AIResult, GeneratedRecipe } from '../services/geminiService';
+import { findRecipesWithAI, AIResult, GeneratedRecipe } from '../services/aiService';
 import { Album } from '../types';
 import Spinner from '../components/common/Spinner';
 

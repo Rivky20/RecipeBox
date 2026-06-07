@@ -13,7 +13,7 @@ import Spinner from '../components/common/Spinner';
 import ErrorMessage from '../components/common/ErrorMessage';
 import ConfirmDialog from '../components/common/ConfirmDialog';
 import { FaDownload, FaEdit, FaTrash, FaShareAlt, FaCheck, FaArrowRight } from 'react-icons/fa';
-import { convertUnits, multiplyRecipe } from '../services/geminiService';
+import { convertUnits, multiplyRecipe } from '../services/aiService';
 
 export default function RecipePage() {
   const { id } = useParams<{ id: string }>();
@@ -31,6 +31,7 @@ export default function RecipePage() {
   const [displayIngredients, setDisplayIngredients] = useState('');
   const [displayInstructions, setDisplayInstructions] = useState('');
   const [aiLoading, setAiLoading] = useState<string | null>(null);
+  const [aiError, setAiError] = useState<string | null>(null);
   const [multiplier, setMultiplier] = useState(2);
   const [isModified, setIsModified] = useState(false);
 
@@ -91,22 +92,28 @@ export default function RecipePage() {
   const handleConvert = async (to: 'cups' | 'grams') => {
     if (!displayIngredients.trim()) return;
     setAiLoading(`convert_${to}`);
+    setAiError(null);
     try {
       setDisplayIngredients(await convertUnits(displayIngredients, to));
       setIsModified(true);
-    } catch { /* silent */ }
+    } catch (e: any) {
+      setAiError(`המרת יחידות נכשלה: ${e?.message || 'נסה שוב'}`);
+    }
     setAiLoading(null);
   };
 
   const handleMultiply = async () => {
     if (!displayIngredients.trim()) return;
     setAiLoading('multiply');
+    setAiError(null);
     try {
       const res = await multiplyRecipe(displayIngredients, displayInstructions, multiplier);
       setDisplayIngredients(res.ingredients);
       setDisplayInstructions(res.instructions);
       setIsModified(true);
-    } catch { /* silent */ }
+    } catch (e: any) {
+      setAiError(`הכפלת המתכון נכשלה: ${e?.message || 'נסה שוב'}`);
+    }
     setAiLoading(null);
   };
 
@@ -371,6 +378,10 @@ export default function RecipePage() {
                 </HStack>
               </HStack>
             </Box>
+
+            {aiError && (
+              <Text fontSize="xs" color="#9E6870" mb={3}>{aiError}</Text>
+            )}
 
             <HStack align="flex-start" gap={6} wrap="wrap">
               <Box flex={1} minW="200px">
